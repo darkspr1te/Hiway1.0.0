@@ -102,7 +102,7 @@ CONFIGS			= release warn_on
 #QT			= 
 QTPLUGIN		+= qjpeg
 VERSION			= 
-TARGET			= sb3000
+TARGET			= hiway
 DESTDIR			= 
 #DLLDESTDIR		= 
 #hiawy del
