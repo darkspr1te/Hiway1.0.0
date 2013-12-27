@@ -1,0 +1,125 @@
+<ui version="4.0" >
+ <class>MsgboxDlg</class>
+ <widget class="QDialog" name="MsgboxDlg" >
+  <property name="windowModality" >
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>270</width>
+    <height>120</height>
+   </rect>
+  </property>
+  <property name="font" >
+   <font>
+    <family>Tahoma</family>
+   </font>
+  </property>
+  <property name="windowTitle" >
+   <string>Title</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>270</width>
+     <height>120</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-inputbox.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-ok.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatus" >
+   <property name="geometry" >
+    <rect>
+     <x>60</x>
+     <y>30</y>
+     <width>200</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Status</string>
+   </property>
+   <property name="textFormat" >
+    <enum>Qt::LogText</enum>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnESC" >
+   <property name="geometry" >
+    <rect>
+     <x>150</x>
+     <y>80</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ESC</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnOK" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Moretextlabel" >
+   <property name="geometry" >
+    <rect>
+     <x>50</x>
+     <y>10</y>
+     <width>211</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TextLabel</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>btnOK</tabstop>
+  <tabstop>btnESC</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

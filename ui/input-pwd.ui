@@ -1,0 +1,225 @@
+<ui version="4.0" >
+ <class>InputPWD</class>
+ <widget class="QDialog" name="InputPWD" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>320</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-main.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>6</y>
+     <width>320</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/title-1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>9</x>
+     <y>10</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/input-pwd.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>10</y>
+     <width>273</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Title</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>270</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK: Select  ESC: Return</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>205</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-help.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnOK" >
+   <property name="geometry" >
+    <rect>
+     <x>63</x>
+     <y>159</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtPasswordConfirm" >
+   <property name="geometry" >
+    <rect>
+     <x>133</x>
+     <y>99</y>
+     <width>140</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>4</number>
+   </property>
+   <property name="echoMode" >
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="readOnly" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatus" >
+   <property name="geometry" >
+    <rect>
+     <x>93</x>
+     <y>126</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Status</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtPassword" >
+   <property name="geometry" >
+    <rect>
+     <x>133</x>
+     <y>59</y>
+     <width>140</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>4</number>
+   </property>
+   <property name="echoMode" >
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="readOnly" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPassword" >
+   <property name="geometry" >
+    <rect>
+     <x>32</x>
+     <y>59</y>
+     <width>100</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Password</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnESC" >
+   <property name="geometry" >
+    <rect>
+     <x>173</x>
+     <y>159</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ESC</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblConfirm" >
+   <property name="geometry" >
+    <rect>
+     <x>32</x>
+     <y>99</y>
+     <width>100</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Confirm</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txtPassword</tabstop>
+  <tabstop>txtPasswordConfirm</tabstop>
+  <tabstop>btnOK</tabstop>
+  <tabstop>btnESC</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

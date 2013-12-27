@@ -1,0 +1,256 @@
+<ui version="4.0" >
+ <class>UserEdit</class>
+ <widget class="QDialog" name="UserEdit" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>200</y>
+     <width>320</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bottom.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusbar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>320</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>270</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK: Select Or T9Input,   ESC: Return </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>205</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-help.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>270</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-inputbox.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboPart" >
+   <property name="geometry" >
+    <rect>
+     <x>103</x>
+     <y>137</y>
+     <width>181</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtName" >
+   <property name="geometry" >
+    <rect>
+     <x>103</x>
+     <y>82</y>
+     <width>131</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>8</number>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboLevel" >
+   <property name="geometry" >
+    <rect>
+     <x>103</x>
+     <y>109</y>
+     <width>181</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="currentIndex" >
+    <number>0</number>
+   </property>
+   <item>
+    <property name="text" >
+     <string>User</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Manager</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>SManager</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="btnESC" >
+   <property name="geometry" >
+    <rect>
+     <x>203</x>
+     <y>163</y>
+     <width>81</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ESC</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPart" >
+   <property name="geometry" >
+    <rect>
+     <x>38</x>
+     <y>137</y>
+     <width>62</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Part      </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblName" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>82</y>
+     <width>62</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Name      </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnOK" >
+   <property name="geometry" >
+    <rect>
+     <x>103</x>
+     <y>163</y>
+     <width>81</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblLevel" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>109</y>
+     <width>62</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Level     </string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtID" >
+   <property name="geometry" >
+    <rect>
+     <x>103</x>
+     <y>55</y>
+     <width>131</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>9</number>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblID" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>55</y>
+     <width>62</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ID        </string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txtID</tabstop>
+  <tabstop>txtName</tabstop>
+  <tabstop>comboLevel</tabstop>
+  <tabstop>comboPart</tabstop>
+  <tabstop>btnOK</tabstop>
+  <tabstop>btnESC</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,427 @@
+<ui version="4.0" >
+ <class>EnrollStep2</class>
+ <widget class="QDialog" name="EnrollStep2" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>320</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-main.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>6</y>
+     <width>320</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/title-1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>10</y>
+     <width>273</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Title</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>9</x>
+     <y>10</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-normal.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>205</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-help.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>270</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Use Arrow &amp; OK, ESC for return</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnEnrollFP" >
+   <property name="geometry" >
+    <rect>
+     <x>29</x>
+     <y>58</y>
+     <width>83</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>1. Enroll FP    </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger4" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>185</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger1" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>140</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger5" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>200</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFingerIcon" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>121</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-finger.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnEnrollPWD" >
+   <property name="geometry" >
+    <rect>
+     <x>29</x>
+     <y>122</y>
+     <width>83</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>3. Password  </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger2" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>155</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger3" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>170</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnEnrollCard" >
+   <property name="geometry" >
+    <rect>
+     <x>29</x>
+     <y>90</y>
+     <width>83</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>2. Enroll Card</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger8" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>245</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblPwdIcon" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>121</x>
+     <y>127</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-pwd.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnUserEdit" >
+   <property name="geometry" >
+    <rect>
+     <x>29</x>
+     <y>154</y>
+     <width>83</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>4. Edit          </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblCardIcon" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>121</x>
+     <y>96</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-card.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger7" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>230</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger10" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>275</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger6" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>215</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFinger9" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>260</x>
+     <y>62</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-fingerenrolled.png</pixmap>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>btnEnrollFP</tabstop>
+  <tabstop>btnEnrollCard</tabstop>
+  <tabstop>btnEnrollPWD</tabstop>
+  <tabstop>btnUserEdit</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

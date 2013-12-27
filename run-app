@@ -1,0 +1,6 @@
+#!/bin/sh
+
+RET=0
+./sb3000 -qws -nokeyboard -nomouse
+RET=$?
+echo "Console=$RET"

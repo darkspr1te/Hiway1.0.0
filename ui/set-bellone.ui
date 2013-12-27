@@ -1,0 +1,155 @@
+<ui version="4.0" >
+ <class>BellSetOne</class>
+ <widget class="QDialog" name="BellSetOne" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>270</width>
+    <height>120</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>270</width>
+     <height>120</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-inputbox.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnOK" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>80</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnESC" >
+   <property name="geometry" >
+    <rect>
+     <x>160</x>
+     <y>80</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ESC</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBellTime" >
+   <property name="geometry" >
+    <rect>
+     <x>54</x>
+     <y>30</y>
+     <width>70</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>BellTime</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBellLength" >
+   <property name="geometry" >
+    <rect>
+     <x>54</x>
+     <y>53</y>
+     <width>70</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Length(s)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBellType" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>0</y>
+     <width>70</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>BellType</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtBellTime" >
+   <property name="geometry" >
+    <rect>
+     <x>124</x>
+     <y>24</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="inputMask" >
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtBellLength" >
+   <property name="geometry" >
+    <rect>
+     <x>124</x>
+     <y>50</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>0</string>
+   </property>
+   <property name="maxLength" >
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBellType" >
+   <property name="geometry" >
+    <rect>
+     <x>160</x>
+     <y>0</y>
+     <width>90</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>BellType-1</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txtBellTime</tabstop>
+  <tabstop>txtBellLength</tabstop>
+  <tabstop>comboBellType</tabstop>
+  <tabstop>btnOK</tabstop>
+  <tabstop>btnESC</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

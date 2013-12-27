@@ -1,0 +1,140 @@
+<ui version="4.0" >
+ <class>BellDlg</class>
+ <widget class="QDialog" name="BellDlg" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>270</width>
+    <height>120</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>270</width>
+     <height>120</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-inputbox.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnESC" >
+   <property name="geometry" >
+    <rect>
+     <x>180</x>
+     <y>47</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Stop</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBellTime" >
+   <property name="geometry" >
+    <rect>
+     <x>14</x>
+     <y>30</y>
+     <width>70</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>BellTime</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBellLength" >
+   <property name="geometry" >
+    <rect>
+     <x>14</x>
+     <y>53</y>
+     <width>70</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Length(s)</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtBellTime" >
+   <property name="geometry" >
+    <rect>
+     <x>84</x>
+     <y>24</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="focusPolicy" >
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="inputMask" >
+    <string/>
+   </property>
+   <property name="readOnly" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtBellLength" >
+   <property name="geometry" >
+    <rect>
+     <x>84</x>
+     <y>50</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="focusPolicy" >
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="text" >
+    <string>0</string>
+   </property>
+   <property name="maxLength" >
+    <number>3</number>
+   </property>
+   <property name="readOnly" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>21</x>
+     <y>80</y>
+     <width>231</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Press OK or ESC key for stop</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txtBellTime</tabstop>
+  <tabstop>txtBellLength</tabstop>
+  <tabstop>btnESC</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

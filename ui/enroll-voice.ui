@@ -1,0 +1,245 @@
+<ui version="4.0" >
+ <class>EnrollVoice</class>
+ <widget class="QDialog" name="EnrollVoice" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>320</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-main.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBackgroundFrame" >
+   <property name="geometry" >
+    <rect>
+     <x>12</x>
+     <y>10</y>
+     <width>297</width>
+     <height>217</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-mask2.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>4</y>
+     <width>320</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/title-1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>176</y>
+     <width>320</width>
+     <height>63</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bottom.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>10</y>
+     <width>273</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Title</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>9</x>
+     <y>6</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-voice.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>13</x>
+     <y>205</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-help.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusText" >
+   <property name="geometry" >
+    <rect>
+     <x>32</x>
+     <y>200</y>
+     <width>280</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Use Arrow &amp; OK, ESC for return</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblEnrollStatus" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>60</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="focusPolicy" >
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="text" >
+    <string>Speak you name</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFilename" >
+   <property name="geometry" >
+    <rect>
+     <x>41</x>
+     <y>102</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>voice file name</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnESC" >
+   <property name="geometry" >
+    <rect>
+     <x>180</x>
+     <y>150</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ESC</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnOK" >
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>150</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblRecoredStat1" >
+   <property name="geometry" >
+    <rect>
+     <x>160</x>
+     <y>100</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/voice-play.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblRecoredStat2" >
+   <property name="geometry" >
+    <rect>
+     <x>200</x>
+     <y>100</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/voice-flow1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblLeftSecond" >
+   <property name="geometry" >
+    <rect>
+     <x>240</x>
+     <y>102</y>
+     <width>46</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

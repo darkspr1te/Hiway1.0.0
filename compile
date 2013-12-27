@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#!/bin/sh
+/qtopia-arm/bin/qmake
+make -s
+#lupdate ./application.pro
+#lrelease ./application.pro
+
+/usr/local/arm/4.3.1/bin/arm-linux-strip --strip-unneeded sb3000
+cp -pf ./*.qm /rootfs_e60/sb3000t/
+cp -pf ./sb3000 /rootfs_e60/sb3000t/
+cp -pf ./run-app /rootfs_e60/sb3000t/
+chmod 777 /rootfs_e60/sb3000t/sb3000 
+
+mkfs.cramfs /rootfs_e60  /mnt/hgfs/working_comet/root.fs
+

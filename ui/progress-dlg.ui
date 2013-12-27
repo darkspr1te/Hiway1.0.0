@@ -1,0 +1,79 @@
+<ui version="4.0" >
+ <class>ProgressDlg</class>
+ <widget class="QDialog" name="ProgressDlg" >
+  <property name="windowModality" >
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>270</width>
+    <height>90</height>
+   </rect>
+  </property>
+  <property name="font" >
+   <font>
+    <family>Tahoma</family>
+   </font>
+  </property>
+  <property name="windowTitle" >
+   <string>Title</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>270</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-inputbox.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblMessage" >
+   <property name="geometry" >
+    <rect>
+     <x>18</x>
+     <y>10</y>
+     <width>241</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar" >
+   <property name="geometry" >
+    <rect>
+     <x>17</x>
+     <y>50</y>
+     <width>240</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="value" >
+    <number>24</number>
+   </property>
+   <property name="textVisible" >
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

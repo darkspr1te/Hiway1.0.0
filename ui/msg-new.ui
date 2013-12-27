@@ -1,0 +1,374 @@
+<ui version="4.0" >
+ <class>MsgNew</class>
+ <widget class="QDialog" name="MsgNew" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>320</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-main.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBackgroundFrame" >
+   <property name="geometry" >
+    <rect>
+     <x>12</x>
+     <y>11</y>
+     <width>297</width>
+     <height>217</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap>:/images/res/bg-mask2.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnESC" >
+   <property name="geometry" >
+    <rect>
+     <x>202</x>
+     <y>160</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ESC</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnOK" >
+   <property name="geometry" >
+    <rect>
+     <x>72</x>
+     <y>160</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTag" >
+   <property name="geometry" >
+    <rect>
+     <x>172</x>
+     <y>50</y>
+     <width>50</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Tag</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboTag" >
+   <property name="geometry" >
+    <rect>
+     <x>215</x>
+     <y>50</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>General</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>User</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="txtStartTime" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>71</x>
+     <y>76</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblBelong" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>170</x>
+     <y>80</y>
+     <width>40</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Belong</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblValidMinutes" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ValidMinutes</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblID" >
+   <property name="geometry" >
+    <rect>
+     <x>18</x>
+     <y>50</y>
+     <width>40</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>SMSID</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>-3</x>
+     <y>4</y>
+     <width>320</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/title-1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>6</x>
+     <y>10</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/SEARCH_GLOG.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStartTime" >
+   <property name="geometry" >
+    <rect>
+     <x>16</x>
+     <y>77</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>StartTime</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtID" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>71</x>
+     <y>50</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>10</y>
+     <width>273</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>MSG New</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>205</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-help.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>270</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Use Arrow &amp; OK, ESC for return, OK for T9Input</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtContent" >
+   <property name="geometry" >
+    <rect>
+     <x>71</x>
+     <y>128</y>
+     <width>215</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblContent" >
+   <property name="geometry" >
+    <rect>
+     <x>16</x>
+     <y>128</y>
+     <width>50</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Content</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblValid" >
+   <property name="geometry" >
+    <rect>
+     <x>172</x>
+     <y>102</y>
+     <width>50</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Valid</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboValid" >
+   <property name="geometry" >
+    <rect>
+     <x>215</x>
+     <y>100</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>Yes</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>No</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLineEdit" name="txtBelong" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>215</x>
+     <y>75</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtValidMinutes" >
+   <property name="enabled" >
+    <bool>true</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>71</x>
+     <y>102</y>
+     <width>90</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txtID</tabstop>
+  <tabstop>txtStartTime</tabstop>
+  <tabstop>txtValidMinutes</tabstop>
+  <tabstop>comboTag</tabstop>
+  <tabstop>txtBelong</tabstop>
+  <tabstop>comboValid</tabstop>
+  <tabstop>txtContent</tabstop>
+  <tabstop>btnOK</tabstop>
+  <tabstop>btnESC</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

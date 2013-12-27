@@ -1,0 +1,317 @@
+<ui version="4.0" >
+ <class>UserDel</class>
+ <widget class="QDialog" name="UserDel" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="lblBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>320</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/bg-main.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleBackground" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>6</y>
+     <width>320</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/title-1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>10</y>
+     <width>273</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Log Search</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTitleIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>9</x>
+     <y>10</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/SEARCH_GLOG.png</pixmap>
+   </property>
+   <property name="scaledContents" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusIcon" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>205</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../sb3000.qrc" >:/images/res/icon-help.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatusText" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>270</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Use Arrow &amp; OK, ESC for return, OK for T9Input</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnESC" >
+   <property name="geometry" >
+    <rect>
+     <x>200</x>
+     <y>162</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ESC</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblName" >
+   <property name="geometry" >
+    <rect>
+     <x>60</x>
+     <y>120</y>
+     <width>50</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Name</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtTo" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>129</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblStatus" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>47</y>
+     <width>279</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Press finger or input card</string>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnOK" >
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>162</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Search</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblID" >
+   <property name="geometry" >
+    <rect>
+     <x>60</x>
+     <y>90</y>
+     <width>40</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>ID</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTo" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>129</y>
+     <width>40</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>to</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboDate" >
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>72</y>
+     <width>231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text" >
+     <string>All</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Last Week</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Past Month</string>
+    </property>
+   </item>
+   <item>
+    <property name="text" >
+     <string>Specify Date</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="lblDate" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>72</y>
+     <width>40</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Date</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtFrom" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>101</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblFrom" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>99</y>
+     <width>40</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>from</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtName" >
+   <property name="geometry" >
+    <rect>
+     <x>113</x>
+     <y>120</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>8</number>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtID" >
+   <property name="geometry" >
+    <rect>
+     <x>113</x>
+     <y>90</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="maxLength" >
+    <number>9</number>
+   </property>
+   <property name="alignment" >
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>comboDate</tabstop>
+  <tabstop>txtFrom</tabstop>
+  <tabstop>txtTo</tabstop>
+  <tabstop>txtID</tabstop>
+  <tabstop>txtName</tabstop>
+  <tabstop>btnOK</tabstop>
+  <tabstop>btnESC</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../sb3000.qrc" />
+ </resources>
+ <connections/>
+</ui>

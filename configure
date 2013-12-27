@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/qtopia-arm/bin/qmake
+

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+/usr/local/arm/4.3.1/bin/arm-linux-strip --strip-unneeded sb3000
+cp -pf ./*.qm ../rootfs/sb3000t/
+cp -pf ./sb3000 ../rootfs/sb3000t/
+cp -pf ./run-app ../rootfs/sb3000t/
