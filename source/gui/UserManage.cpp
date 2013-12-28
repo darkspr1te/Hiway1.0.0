@@ -9,8 +9,8 @@ extern void xprintf (
 	const char*	str,	/* Pointer to the format string */
 	...					/* Optional arguments */
 );
-//×÷ÓÃ:±à¼­ÓÃ»§µÄÊ±ºò²»´Ó·şÎñÆ÷ÏÂÔØĞÅÏ¢
-//Ò²¾ÍÊÇ×¢²áµÄÊ±ºòÏÂÔØ£¬±à¼­µÄÊ±ºòÆÁ±Î
+//ä½œç”¨:ç¼–è¾‘ç”¨æˆ·çš„æ—¶å€™ä¸ä»æœåŠ¡å™¨ä¸‹è½½ä¿¡æ¯
+//ä¹Ÿå°±æ˜¯æ³¨å†Œçš„æ—¶å€™ä¸‹è½½ï¼Œç¼–è¾‘çš„æ—¶å€™å±è”½
 static BOOL USER_EDIT_FLAG=0;
 
 extern int     gWgInLength;  
@@ -338,7 +338,7 @@ BOOL CEnrollStep1::EnrollUserInfo()
 	return bRet;
 }
 
-int CEnrollStep1::DoProcess(int nEdit /*=0*/)//×¢²á´¦ÀíµÚÒ»²½
+int CEnrollStep1::DoProcess(int nEdit /*=0*/)//æ³¨å†Œå¤„ç†ç¬¬ä¸€æ­¥
 {
 	int nKey;
 	BOOL bRet;
@@ -395,7 +395,7 @@ int CEnrollStep1::DoProcess(int nEdit /*=0*/)//×¢²á´¦ÀíµÚÒ»²½
 		case UIKEY_OK:
 			pCurrentBtn = (QPushButton*)QApplication::focusWidget();
 			if(pCurrentBtn == ui.btnOK)  
-			bRet = OnBtnOK();  //×ªÈëÏÂ²½Öè
+			bRet = OnBtnOK();  //è½¬å…¥ä¸‹æ­¥éª¤
 			break;  
 		default:
 			break;
@@ -436,15 +436,15 @@ void CEnrollStep1::OnFocusChanged(QWidget *from, QWidget *to)
 			EnrollParamSet(-1);
 		}	
 		xprintf("xxxx4\r\n");
-		if(USER_EDIT_FLAG==0 && dbLicense.bOnLineEnroll==TRUE) //ÔÚ±à¼­ÓÃ»§Ê±²»Òª´Ó·şÎñÆ÷»ñÈ¡ĞÕÃû¡£
+		if(USER_EDIT_FLAG==0 && dbLicense.bOnLineEnroll==TRUE) //åœ¨ç¼–è¾‘ç”¨æˆ·æ—¶ä¸è¦ä»æœåŠ¡å™¨è·å–å§“åã€‚
 		{
 			if(to == (QWidget*)ui.txtName)
 			{
-				//»ñÈ¡·şÎñÆ÷ĞÕÃû
+				//è·å–æœåŠ¡å™¨å§“å
 				xprintf("xxxx\r\n");
 				xprintf("nID===%d\r\n",nID);
 				int nRet;
-				//µ±npinÊÇ1Ê±£¬Ö»»ñÈ¡name£¬0¾ÍÏÂÔØ×¢²á
+				//å½“npinæ˜¯1æ—¶ï¼Œåªè·å–nameï¼Œ0å°±ä¸‹è½½æ³¨å†Œ
 				nRet =HttpClient_main(DEVID,nID,0,0,HTTP_DEPTPUNCH,TRUE);
 				xprintf("nRet===%d\r\n",nRet);
 				if(nRet == 0)
@@ -528,7 +528,7 @@ void CEnrollStep1::OnPasswordChange(const QString & /*szPassword*/)
 BOOL CEnrollStep1::OnBtnOK()
 {
 	int nRet;
-	if (!EnrollCheck())//¼ì²âÒª×¢²áµÄÏà¹ØĞÅÏ¢
+	if (!EnrollCheck())//æ£€æµ‹è¦æ³¨å†Œçš„ç›¸å…³ä¿¡æ¯
 		return FALSE;
 
 	/*EnrollUserInfo();*/
@@ -544,9 +544,9 @@ BOOL CEnrollStep1::OnBtnOK()
 	//xprintf("ui.txtName=%s \r\n", (const char*)U2G(ui.txtName->text()));
 
 	if (pUI && memcmp(pUI, &gUserInfoTemp, sizeof(USER_INFO)))
-		uiEnrollUserInfo(&gUserInfoTemp);//ÓÃ»§×¢²á
+		uiEnrollUserInfo(&gUserInfoTemp);//ç”¨æˆ·æ³¨å†Œ
 xprintf("i must enter the second steps!!!\r\n");
-	nRet = DIALOGBOXEX(CEnrollStep2,CEnrollStep2::NEW);//½øÈëµÚ¶ş½×¶Î×¢²á
+	nRet = DIALOGBOXEX(CEnrollStep2,CEnrollStep2::NEW);//è¿›å…¥ç¬¬äºŒé˜¶æ®µæ³¨å†Œ
 	pUI = (USER_INFO*)DbUserInfoGetPointer(gUserInfoTemp.ID);
 	if (pUI && memcmp(&BACKUP, pUI, sizeof(USER_INFO)))
 	{
@@ -694,7 +694,7 @@ BOOL CEnrollStep2::OnKeyPressOK()
 
 		xprintf("i should go to cenrollfp!!!\r\n");
 
-		DIALOGBOX(CEnrollFP);//dµ÷ÓÃÖ¸ÎÆ×¢²áÁË
+		DIALOGBOX(CEnrollFP);//dè°ƒç”¨æŒ‡çº¹æ³¨å†Œäº†
 
 	}
 	else if (pCurrentBtn == ui.btnEnrollCard)
@@ -766,7 +766,7 @@ BOOL CEnrollStep2::OnKeyPressOK()
 				xprintf("gUserInfoTemp.PWD==%d\r\n",gUserInfoTemp.PWD);
 				uiSoundOut(SOUND_OK, UI_BUZZER_OK, UITIME_VOICE);
 
-				//ÕâÀï³öÏÖÎÊÌâÁË
+				//è¿™é‡Œå‡ºç°é—®é¢˜äº†
 				//if(ComClientSendFingerData(gUserInfoTemp.ID,BACKUP_PASSWORD,(BYTE*)&dwPassword)==0)
 					 //DbFpUploadDataSave(gUserInfoTemp.ID,BACKUP_PASSWORD,0);
 				u32 ywmbymgr;
@@ -790,7 +790,7 @@ BOOL CEnrollStep2::OnKeyPressOK()
 				if(web2_send_finger(gUserInfoTemp.ID,BACKUP_PASSWORD,ywmbymgr,(u8*)&dwPassword) == 0)
 				//if(sendfinger_web(gUserInfoTemp.ID,BACKUP_PASSWORD,ywmbymgr,(u8*)&(gUserInfoTemp.PWD)) == 0)	
 				{
-					DbFpUploadDataSave(gUserInfoTemp.ID,BACKUP_PASSWORD,0);//Õâ¸öÊÇÔÚÀëÏßÊ±¼ÇÂ¼µÄ
+					DbFpUploadDataSave(gUserInfoTemp.ID,BACKUP_PASSWORD,0);//è¿™ä¸ªæ˜¯åœ¨ç¦»çº¿æ—¶è®°å½•çš„
 					xprintf("loveywm3344\r\n");
 				}
 				
@@ -1202,9 +1202,9 @@ labelAgainFpEnroll:
 	//ui.btnESC->setFocus(Qt::MouseFocusReason);
 	FP_DrawEnrollStatus(0);
 	nFpEnrollStep = 1;
-	uiFpEnrollStart();//×¢²áº¯Êı
+	uiFpEnrollStart();//æ³¨å†Œå‡½æ•°
 xprintf("loveywm 222\r\n");
-//ÒÔnFpEnrollStepÎª±êÖ¾ÔÚÕâÀïÑ­»·Èı´Î»ñÈ¡Ö¸ÎÆ£¬×îºóÒ»´ÎÍê³É£¬È»ºóÉÏ´«
+//ä»¥nFpEnrollStepä¸ºæ ‡å¿—åœ¨è¿™é‡Œå¾ªç¯ä¸‰æ¬¡è·å–æŒ‡çº¹ï¼Œæœ€åä¸€æ¬¡å®Œæˆï¼Œç„¶åä¸Šä¼ 
 	while (uiTimeIsTimeout() == FALSE)
 	{
 		POST_EVENTS();
@@ -1221,7 +1221,7 @@ xprintf("loveywm 222\r\n");
 // 			goto labelAgainFpEnroll;
 // 		}
 
-		if (uiCMOSCaptureFP())//×¢ÒâÕâ¸öº¯ÊıÀïÃæµÄĞÅÏ¢
+		if (uiCMOSCaptureFP())//æ³¨æ„è¿™ä¸ªå‡½æ•°é‡Œé¢çš„ä¿¡æ¯
 		{
 			uiBuzzerAlarm();
 //			if (dbSetupTotal.setSystem.bFPShow)
@@ -1230,7 +1230,7 @@ xprintf("loveywm 222\r\n");
 				POST_EVENTS();
 //			}
 			uiLcdSetLabelText(ui.lblEnrollStatus, UISTR(UISTR_ENROLLFP_TAKEOFF), FOREGROUND_COLOR);
-			nRet = uiFpEnrollNth(nFpEnrollStep);//È¡µÚÒ»¸öÖ¸ÎÆ
+			nRet = uiFpEnrollNth(nFpEnrollStep);//å–ç¬¬ä¸€ä¸ªæŒ‡çº¹
 			if (nRet != UIENROLL_RET_TRUE)
 				nFpEnrollStep = 3;
 			else
@@ -1239,7 +1239,7 @@ xprintf("loveywm 333\r\n");
 xprintf("nFpEnrollStep==%d\r\n",nFpEnrollStep);
 			if (nFpEnrollStep < 3)
 			{
-				WAIT_EVENT((uiCMOSIsPressFP()));//Ñ­»·Ö¸ÎÆÊÇ·ñ°´ÏÂ
+				WAIT_EVENT((uiCMOSIsPressFP()));//å¾ªç¯æŒ‡çº¹æ˜¯å¦æŒ‰ä¸‹
 			}
 
 			if (nRet != UIENROLL_RET_TRUE || nFpEnrollStep != 3)
@@ -1269,7 +1269,7 @@ xprintf("nRet==%d\r\n",nRet);
 					if (nFpEnrollStep == 4)
 					{   
 						if (nRet == UIENROLL_RET_TRUE)
-							nRet = uiFpEnrollEnd((FPINFO*)&gFpData[0]);//Ö¸ÎÆ
+							nRet = uiFpEnrollEnd((FPINFO*)&gFpData[0]);//æŒ‡çº¹
 
 						if (nRet == UIENROLL_RET_FALSE)
 						{
@@ -1306,15 +1306,15 @@ xprintf("nRet==%d\r\n",nRet);
 								goto labelAgainFpEnroll;
 						       }   */
 							   
-							bResult = DbUserInfoEnroll(&gUserInfoTemp, nFP, &gFpData[0]);//ÔÚÕâÀï×¢²áÁË
+							bResult = DbUserInfoEnroll(&gUserInfoTemp, nFP, &gFpData[0]);//åœ¨è¿™é‡Œæ³¨å†Œäº†
 							uiLogSlogAdd2(g_uiProcStatus.nIDCurrentMgr, SLOG_BACKUPENROLL_FP, nID, bResult);
 							uiLcdSetLabelText(ui.lblEnrollStatus, UISTR(UISTR_ENROLLFP_ENROLLSUCCESS), FOREGROUND_COLOR);
 							uiSoundOut(SOUND_FPENROLL_SUCCESS, UI_BUZZER_OK, UITIME_VOICE, TRUE);
 							
 							//ComClientSendFingerImage(gUserInfoTemp.ID, nFP, SB_FP__256IMAGE);
-							//×îºÃÔÚÕâÀïÏÈÅĞ¶ÏÏÂÍøÂçÓĞÃ»ÓĞÁ¬ÉÏ£¬È»ºóÔÙÉÏ´«(Õâ¸öÔİÊ±Ã»Íê³É)
-							//if(ComClientSendFingerData(gUserInfoTemp.ID,nFP,(BYTE*)&gFpData[0])==0)//ÔÚÕâÀï·¢ËÍÁË£¬Ôò¾ÍÊÇÎÒÒªÕÒµÄ,¸Ä¶¯Õâ¸öº¯ÊıÁË
-							//ÕûÀíÈ¨ÏŞ
+							//æœ€å¥½åœ¨è¿™é‡Œå…ˆåˆ¤æ–­ä¸‹ç½‘ç»œæœ‰æ²¡æœ‰è¿ä¸Šï¼Œç„¶åå†ä¸Šä¼ (è¿™ä¸ªæš‚æ—¶æ²¡å®Œæˆ)
+							//if(ComClientSendFingerData(gUserInfoTemp.ID,nFP,(BYTE*)&gFpData[0])==0)//åœ¨è¿™é‡Œå‘é€äº†ï¼Œåˆ™å°±æ˜¯æˆ‘è¦æ‰¾çš„,æ”¹åŠ¨è¿™ä¸ªå‡½æ•°äº†
+							//æ•´ç†æƒé™
 							u32 ywmbymgr;
 							if(gUserInfoTemp.FLAG.members.byMgr == 1)
 							{
@@ -1334,7 +1334,7 @@ xprintf("nRet==%d\r\n",nRet);
 							}
 							if(web2_send_finger(gUserInfoTemp.ID,nFP,ywmbymgr,(u8*)&gFpData[0]) == 0)
 							{
-								DbFpUploadDataSave(gUserInfoTemp.ID,nFP,0);//Õâ¸öÊÇÔÚÀëÏßÊ±¼ÇÂ¼µÄ
+								DbFpUploadDataSave(gUserInfoTemp.ID,nFP,0);//è¿™ä¸ªæ˜¯åœ¨ç¦»çº¿æ—¶è®°å½•çš„
 								xprintf("loveywm3344\r\n");
 							}
 						}
@@ -1513,7 +1513,7 @@ void CEnrollCard::DoProcess()
 					
 				if(web2_send_finger(gUserInfoTemp.ID,BACKUP_CARD,ywmbymgr,(u8*)&dwIDValid) == 0)	
 				{
-					DbFpUploadDataSave(gUserInfoTemp.ID,BACKUP_CARD,0);//Õâ¸öÊÇÔÚÀëÏßÊ±¼ÇÂ¼µÄ
+					DbFpUploadDataSave(gUserInfoTemp.ID,BACKUP_CARD,0);//è¿™ä¸ªæ˜¯åœ¨ç¦»çº¿æ—¶è®°å½•çš„
 					xprintf("loveywm card\r\n");
 				}     
 				goto _lExit;
@@ -4989,4 +4989,5 @@ _lExit:
 		
 	return nDept;
 }
+
 

@@ -131,7 +131,7 @@ typedef enum
 #include <sys/reboot.h>
 #include <netdb.h>   
 //hiway add
-#include<linux/input.h>//°´¼üÊä³ö
+#include<linux/input.h>//æŒ‰é”®è¾“å‡º
 
 
 #include <QtCore/QString>
@@ -326,10 +326,10 @@ extern st_FpUploadData*		gpFpUploadData;
 #define  PrintfDbugEn   	0
 #define PRODUCT_AB 	0
 
-#define USE_FP 		0    	//ÊÇ·ñÊ¹ÓÃÖ¸ÎÆÑéÖ¤/¼ÇµÃ¸Ämain,cppÏÂÃæµÄÒ»¸ö²ÎÊıgbIsCMOS = FALSE;
-#define USE_CARD		0	//ÊÇ·ñÊ¹ÓÃ´ò¿¨ÑéÖ¤
-#define AE_375X		1	//Ê¹ÓÃ375µÄÌØĞÔ£¬Ò»Ğ©ÊÇ372Ëù²»ÓÃµÄ	
-#define AE_372X              0      //Ê¹ÓÃ372µÄÌØĞÔ£¬Ò»Ğ©ÊÇ375Ëù²»ÓÃµÄ
+#define USE_FP 		0    	//æ˜¯å¦ä½¿ç”¨æŒ‡çº¹éªŒè¯/è®°å¾—æ”¹main,cppä¸‹é¢çš„ä¸€ä¸ªå‚æ•°gbIsCMOS = FALSE;
+#define USE_CARD		0	//æ˜¯å¦ä½¿ç”¨æ‰“å¡éªŒè¯
+#define AE_375X		1	//ä½¿ç”¨375çš„ç‰¹æ€§ï¼Œä¸€äº›æ˜¯372æ‰€ä¸ç”¨çš„	
+#define AE_372X              0      //ä½¿ç”¨372çš„ç‰¹æ€§ï¼Œä¸€äº›æ˜¯375æ‰€ä¸ç”¨çš„
 
 
 extern void xprintf (
@@ -368,3 +368,4 @@ void DM9000_Check(void);
 char *mystrstr(char *haystack, char *needle);
 
 #endif /*__PRECOMP_H__*/
+

@@ -53,7 +53,8 @@ SOURCES			= source/main.cpp \
 				  source/t9/t9_english.cpp \
 				  source/t9/t9_symbol.cpp \
 				  source/style/customstyle.cpp \
-				  source/camera/spcav4l.cpp
+				  source/camera/spcav4l.cpp \
+    ReadMe.cpp
 
 FORMS			= ui/bell-dlg.ui \
 				  ui/enroll-card.ui \
@@ -98,6 +99,8 @@ RESOURCES		= sb3000.qrc
 #INCLUDEPATH	= 
 #hiway del
 #LIBS			+= -Lsource/mp3 -lmadplay
+#LIBS                    += /opt/qt-arm-hiway/plugins/imageformats/libqjpeg.so
+LIBS                    += -lqjpeg
 CONFIGS			= release warn_on
 #QT			= 
 QTPLUGIN		+= qjpeg

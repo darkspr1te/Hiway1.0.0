@@ -2243,7 +2243,7 @@ QString uiProcMenuGetItemValue(int nItemStr)
 #endif	
 
 #if AE_372X
-	//ÏÂÃæËÄ¸öÊÇÎªÁËÏÔÊ¾Îª2000¶ø¸Ä¶¯µÄ
+	//ä¸‹é¢å››ä¸ªæ˜¯ä¸ºäº†æ˜¾ç¤ºä¸º2000è€Œæ”¹åŠ¨çš„
 	case UISTR_MENU_USERENROLLCOUNT:
 		str = QString("%1 / %3%4").arg(DbUserInfoGetCount()).arg(2000).arg(UISTR(UISTR_UNIT_MAN));
 		break;
@@ -2921,10 +2921,10 @@ BOOL uiProcMenuCustom(QWidget* /*pWnd*/, int nItemStr)
 		}
 		break;
 /*
-//web2.0Ö÷¶¯µÄÈıÌõÃüÁî
+//web2.0ä¸»åŠ¨çš„ä¸‰æ¡å‘½ä»¤
 	case UISTR_MENU_COMMSETTING_HTTPUPDATE:
 		xprintf("i am in uistr_menu_commsetting_httpuodate!!!\r\n");		
-		if(HttpClient_main(DEVID,0,0,0,HTTP_TIMESET,FALSE))//ÕâÀï´æÔÚ»áÒòÎª²ÎÊı´«µİ²»ÕıÈ·µ¼ÖÂËÀ»ú£¬ÒÑ½â¾ö
+		if(HttpClient_main(DEVID,0,0,0,HTTP_TIMESET,FALSE))//è¿™é‡Œå­˜åœ¨ä¼šå› ä¸ºå‚æ•°ä¼ é€’ä¸æ­£ç¡®å¯¼è‡´æ­»æœºï¼Œå·²è§£å†³
 		{
 			uiLcdMessageBox(UI_MSG_OK, UISTR_ACTION_SUCCESS, UI_MSGTIMEOUT);
 			xprintf("httpclient_main is ok\r\n");
@@ -3103,7 +3103,7 @@ BOOL uiProcMenuCustom(QWidget* /*pWnd*/, int nItemStr)
 	case UISTR_MENU_ENROLLNEW:
 		xprintf("i am in uistr_menu_enrollnew!!!by loveywm2012.09.19\r\n");
 /*		
-		²âÊÔÓÃµÄ¶Ô»°¿ò
+		æµ‹è¯•ç”¨çš„å¯¹è¯æ¡†
 		CMessageBox *msgBox; 
       		msgBox	= new CMessageBox; 
 		msgBox->MsgBoxProc_Message3(UISTR(UISTR_WAIT_FOR_COMMUNICATING));
@@ -4030,3 +4030,4 @@ int uiProcCustomDrawEnroll(CMenu *pWnd, QPainter *painter, T_UI_MENUITEM */*pIte
 	painter->restore();
 	return 0;
 }
+

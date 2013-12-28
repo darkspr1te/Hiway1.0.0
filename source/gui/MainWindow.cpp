@@ -1069,7 +1069,7 @@ xprintf("nKey==%d\r\n",nKey);
 	break;
   }	
 }
-int nMenuDelay=0;//Îª±£»¤¶øÉèÖÃ
+int nMenuDelay=0;//ä¸ºä¿æŠ¤è€Œè®¾ç½®
 void uiProcKeyboardManager(int nKey)
 {
 
@@ -1105,7 +1105,7 @@ void uiProcKeyboardManager(int nKey)
 			}
 			else if (nKey1 == UIKEY_OK)
 			{
-				if(HttpClient_main(DEVID,0,0,0,HTTP_TIMESET,FALSE))//ÕâÀï´æÔÚ»áÒòÎª²ÎÊı´«µİ²»ÕıÈ·µ¼ÖÂËÀ»ú£¬ÒÑ½â¾ö
+				if(HttpClient_main(DEVID,0,0,0,HTTP_TIMESET,FALSE))//è¿™é‡Œå­˜åœ¨ä¼šå› ä¸ºå‚æ•°ä¼ é€’ä¸æ­£ç¡®å¯¼è‡´æ­»æœºï¼Œå·²è§£å†³
 				{
 					uiLcdMessageBox(UI_MSG_OK, UISTR_ACTION_SUCCESS, UI_MSGTIMEOUT);
 					xprintf("httpclient_main is ok\r\n");
@@ -1328,7 +1328,7 @@ void DispDeviceState(void)
 	//xprintf("tcpclient_connect_isok()==%d\r\n",tcpclient_connect_isok());
 	//xprintf("dbLicense.byTcpipMode==%d\r\n",dbLicense.byTcpipMode);
 	//xprintf("http_WEB_CONNECT==%d\r\n",http_WEB_CONNECT);
-	if(LINK_LOST==1)//Á¬½ÓÊ§°Ü,ÍøÏß¶Ï¿ª
+	if(LINK_LOST==1)//è¿æ¥å¤±è´¥,ç½‘çº¿æ–­å¼€
 	{
 		g_MainWindow->ui.lblNet->setPixmap(QPixmap(GUI_RESOURCE_PATH"net-lost.png"));
 		g_MainWindow->ui.lblNet->show();
@@ -1404,7 +1404,7 @@ void uiProcMain(BOOL bFirst)
 				g_VerifyWindow = new CVerify;
 		}
 
-		uiLogSlogAdd(0, SLOG_TURNON, 0, 0);//ÕâÊÇµÚÒ»¸ö¼ÇÂ¼·¢ËÍ
+		uiLogSlogAdd(0, SLOG_TURNON, 0, 0);//è¿™æ˜¯ç¬¬ä¸€ä¸ªè®°å½•å‘é€
 //		uiSoundOut(SOUND_TURNON, UI_BUZZER_OK);
 	}
 	else
@@ -1441,7 +1441,7 @@ void uiProcMain(BOOL bFirst)
         //if (dbLicense.byTcpipMode == TCPIP_CLIENT)
             //tcpclient_connect_Creatthread();
 /*
-	//ÕâÀïÊÇÖØÆôÊ±¶ÔÊ±¼äÓë·şÎñ¶ËµÄÍ¬²½,add by loveywm 2012.10.27
+	//è¿™é‡Œæ˜¯é‡å¯æ—¶å¯¹æ—¶é—´ä¸æœåŠ¡ç«¯çš„åŒæ­¥,add by loveywm 2012.10.27
 	if(HttpClient_main(DEVID,0,0,0,HTTP_TIMESET,FALSE))
 	{
 		xprintf("time set is ok\r\n");
@@ -1460,19 +1460,19 @@ void uiProcMain(BOOL bFirst)
 		 	DM9000_Check();
 			DispDeviceState();		
         		#endif	 
-		//ÅĞ¶ÏÓÃ»§Ê±¼äÊÇ·ñ¹ıÆÚ
+		//åˆ¤æ–­ç”¨æˆ·æ—¶é—´æ˜¯å¦è¿‡æœŸ
 		DbUserTimeOut(dbSetupTotal.setSystem.dwDataSaveTime*86400);
 
 	   	//uiLcdSetLabelText(g_StatusWindow, QString(UISTR(UISTR_PRESS_VERIFY_GET_DATA)), QColor(255, 255, 214), QColor(255, 255, 255));
-		//Ê±¼ä¹ÜÀí
+		//æ—¶é—´ç®¡ç†
 		UIPROC_WRAPPER(uiProcTimerManage());
-		//»ñÈ¡ÃüÁî£¬Ñ­»·²¶×½usb£¬´®¿Ú£¬ÍøÂçµÈ
+		//è·å–å‘½ä»¤ï¼Œå¾ªç¯æ•æ‰usbï¼Œä¸²å£ï¼Œç½‘ç»œç­‰
                 //UIPROC_WRAPPER(uiProcHostCommandMonitor());
-		//»ñÈ¡°´¼üÖµ
+		//è·å–æŒ‰é”®å€¼
 		UIPROC_WRAPPER(uiProcKeyboardManager());
-		//»ñÈ¡ÍøÂçĞÅºÅ
+		//è·å–ç½‘ç»œä¿¡å·
 		//get_cmd();//add by loveywm	
-		//¼ì²âÖ¸ÎÆ°´ÏÂ
+		//æ£€æµ‹æŒ‡çº¹æŒ‰ä¸‹
                 //UIPROC_WRAPPER(g_VerifyWindow->VerifyLoop());
 		//get_cmd();		
                 UIPROC_WRAPPER(uiProcLockManager());
@@ -1500,6 +1500,7 @@ CMainWindow::CMainWindow(QWidget *parent)
 	: QWidget(parent)
 {
 	GUI_DLG_IMPL(TRUE);
+        ui.lblBackground->setPixmap(QPixmap(GUI_RESOURCE_PATH"backgroup1.png"));
 	//ui.lblBackground->setPixmap(QPixmap(BACKGROUND_IMAGE));
 	//ui.label->setPixmap(QPixmap(BOTTOM_IMAGE));
 	
@@ -1542,7 +1543,9 @@ CMainWindow::CMainWindow(QWidget *parent)
 	g_StatusWindow = ui.lblStatusbarText; 
         g_StatusCom = ui.lblComText;
 	g_StatusIcon = ui.lblStatbarFingerprint;
-	g_rgbForeColor = qRgb(255, 255, 214);
+        //g_rgbForeColor = qRgb(255, 255, 214);
+        //hiway add and del
+        g_rgbForeColor = qRgb(255, 255, 214);
 	//g_rgbForeColor1 = qRgb(255, 255, 255);
 	if (!g_TimerList)
 	{
@@ -1849,7 +1852,7 @@ void CVerify::VerifyLoop(int nFirstDigit /* = -1 */)
 		}
 	}
 #if(USE_FP == 1)		
-	if (uiCMOSCaptureFP())//ÕâÀï´æÔÚÒ»¸ö·¢ËÍÈ·ÈÏ
+	if (uiCMOSCaptureFP())//è¿™é‡Œå­˜åœ¨ä¸€ä¸ªå‘é€ç¡®è®¤
 	{
 		//xprintf("test3333\r\n");
 		nVerifyMode = UI_VERIFY_FP;
@@ -1900,7 +1903,7 @@ xprintf("nVerifyMode ==%d\r\n",nVerifyMode);
 			xprintf("UI_VERIFY_ID----ywm\r\n");
 			xprintf("bDisabled ==%d\r\n",bDisabled);
 			xprintf("nID==%d\r\n",nID);
-			bResult = uiIDVerify(nID, &UserInfo, &bDisabled);//×¢²á³É¹¦µÄ»°£¬·µ»Ø1
+			bResult = uiIDVerify(nID, &UserInfo, &bDisabled);//æ³¨å†ŒæˆåŠŸçš„è¯ï¼Œè¿”å›1
 			//xprintf("bResult==%d\r\n",bResult);
 			if(!bResult)
 			{
@@ -1932,7 +1935,7 @@ xprintf("nVerifyMode ==%d\r\n",nVerifyMode);
 				//xprintf("dbLicense.bUseACFunction==%d\r\n",dbLicense.bUseACFunction);
 				
 				if (bResult && dbLicense.bUseACFunction && DbUserInfoFlagDuressStatusGet(&UserInfo, byFingerNumber))
-					VERIFY_DURESS_START(UserInfo.ID); //FP duressÕâÀïÓĞ¸ö·¢ËÍ
+					VERIFY_DURESS_START(UserInfo.ID); //FP duressè¿™é‡Œæœ‰ä¸ªå‘é€
 			}
 			else
 			{
@@ -2028,8 +2031,8 @@ xprintf("nVerifyMode ==%d\r\n",nVerifyMode);
 		if (TRUE)
 		{
 			//xprintf("test9999\r\n");
-			//·¢ËÍµÄÊÇ03 00 00 00
-			//uiEventSend_VERIFY_SUCCESS(nVerifyMode, UserInfo.ID);//×¢ÒâÕâ¸ö·¢ËÍĞÅÏ¢
+			//å‘é€çš„æ˜¯03 00 00 00
+			//uiEventSend_VERIFY_SUCCESS(nVerifyMode, UserInfo.ID);//æ³¨æ„è¿™ä¸ªå‘é€ä¿¡æ¯
 		}
 xprintf("bSlaveVerified==%d\r\n",bSlaveVerified);
 		if (bSlaveVerified)
@@ -2320,7 +2323,7 @@ _lSuccess:
 //xprintf("nAction===%d\r\n",nAction);
 //xprintf("VM_NONE===%d\r\n",VM_NONE);
 			if (nAction != VM_NONE)
-				uiLogGlogAdd(UserInfo.ID, (BYTE)nAction, g_uiProcStatus.nTrType);//×¢ÒâÕâÀïÕâÀï·¢ËÍÒ»¸öĞÅÏ¢
+				uiLogGlogAdd(UserInfo.ID, (BYTE)nAction, g_uiProcStatus.nTrType);//æ³¨æ„è¿™é‡Œè¿™é‡Œå‘é€ä¸€ä¸ªä¿¡æ¯
 		}
 
 		if (dbLicense.bUseACFunction)
@@ -2769,3 +2772,4 @@ int CBellDlg::DoProcess(int nBellNumber)
 
 	return 0;
 }
+

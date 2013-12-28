@@ -185,14 +185,14 @@ typedef struct {
 
 
 typedef struct UserDataPak{
-	int UserExist; //�û��Ƿ����
-	UINT64 dwEnrollNumber; //�û�id
-	DWORD dwBackupNumber; //�û�id
+	int UserExist; //用户是否存在
+	UINT64 dwEnrollNumber; //用户id
+	DWORD dwBackupNumber; //用户id
 	DWORD dwPrivilege;
 	DWORD dwVerifymode;
-	BYTE UserName[24]; //�û�����
+	BYTE UserName[24]; //用户姓名
 	union{
-		BYTE FingerData[1404+12]; //�û�ָ��ģ��
+		BYTE FingerData[1404+12]; //用户指纹模板
 		DWORD Password;
 		DWORD CardID;
 	};
@@ -208,8 +208,8 @@ typedef struct UserIDInfo
 	} mUserIDInfo;
 
 typedef struct {
-	DWORD Index;    //���֧��2λ����
-	char Letter[16]; //��ĸ	
+	DWORD Index;    //最大支持2位数。
+	char Letter[16]; //字母	
 }st_HeadString;
 
 typedef struct {
@@ -490,66 +490,66 @@ extern void DispDeviceState(void);
 
 
 /*
-*	������Ϊweb2.0Э�����ӵ���������ݽṹ����غ���
-*	��������
+*	下面是为web2.0协议增加的命令和数据结构与相关函数
+*	的声明。
 */
 
-#define SEND_CONNECT_SIZE  (sizeof(PACK_HEAD)+sizeof(st_connectInfo)+4)//��������ʱ�����ֳ�
-#define 	SEND_HEAD 	0x1a2b3c4d      //�������ͱ�־	
-#define	RECV_HEAD	0x4d3c2b1a	//���ܳɹ��󷵻ر�־
-#define    PACK_HEAD_SIZE	(sizeof(PACK_HEAD))//ͷ�ļ��Ĵ�С
+#define SEND_CONNECT_SIZE  (sizeof(PACK_HEAD)+sizeof(st_connectInfo)+4)//建立连接时发送字长
+#define 	SEND_HEAD 	0x1a2b3c4d      //主动发送标志	
+#define	RECV_HEAD	0x4d3c2b1a	//接受成功后返回标志
+#define    PACK_HEAD_SIZE	(sizeof(PACK_HEAD))//头文件的大小
 #define CMD_WEB_ACK			1
 #define CMD_WEB_NAK			0
-#define 	CMDWEBSIZE	        24//��һ��ֻ��������ͷ��24���ֽ�
+#define 	CMDWEBSIZE	        24//第一次只接受数据头的24个字节
 
 
-//�����ֵ�ö������
+//命令字的枚举声明
 enum{
 
-	CMD_CONNECT = 0x01,                  		//��������
-	CMD_REALTIME_LOG,					//�����ϴ���¼
-	CMD_UPLOAD_FINGER,					//�ϴ�ָ��
-	CMD_GET_LOG,						//PC��ȡ��¼
-	CMD_GET_USER_REG,					//PC��ȡ�û�ע����Ϣ
-	CMD_SET_USER_REG,					//PC�·��û�ע����Ϣ
-	CMD_DEL_USER_REG,					//PC�û�ɾ��
-	CMD_MOD_PRVILEGE,					//PC�·�Ȩ������
-	CMD_GET_ALL_USERID,					//PC ��ȡ�û��б�
-	CMD_DEL_DATA,						//PC ɾ�����ݼ�¼
-	CMD_UPGRADE_ADDR,					//PC �·�������ַ
-	CMD_SET_TIME,                  				//PC ����ʱ��
-	CMD_GET_TIME,						//PC��ȡʱ��	
-	//�Ž�����
-	CMD_GET_PASSTIME,						//PC ��ȡ�Ž�PASSTIME
-	CMD_SET_PASSTIME,						//PC �����Ž�PASSTIME
-	CMD_GET_GROUPTIME,					//PC ��ȡ�Ž�GROUPTIME
-	CMD_SET_GROUPTIME,					//PC ��ȡ�Ž�GROUPTIME
-	CMD_GET_USERCTRL,						//PC ��ȡ�û�����
-	CMD_SET_USERCTRL,						//PC �����û�����
-	CMD_GET_DOOR_KEY,						//PC ��ȡ�Ž����Ʋ���
-	CMD_SET_DOOR_KEY,						//PC �����Ž����Ʋ���
-	CMD_GET_SOFTKEY,						//PC ��ȡ��ݼ�
-	CMD_SET_SOFTKEY,						//PC ���ÿ�ݼ�
-	CMD_GET_DEVICE_STATUS1,				//PC ��ȡ�豸״̬
-	CMD_GET_DOOR_STATE,					//PC ��ȡ��״̬
-	CMD_SET_DOOR_STATE	,				//PC ������״̬
-	CMD_GET_BELL,							//PC ��ȡ����
-	CMD_SET_BELL,							//PC ���õ���
-	CMD_GET_TASK_TIME_RANGE,				//PC ��ȡ��ʱ����ʱ�䷶Χ
-	CMD_SET_TASK_TIME_RANGE,				//PC ���ö�ʱ����ʱ�䷶Χ
-	CMD_GET_TASK_DAY,						//PC ��ȡ��ʱ��������
-	CMD_SET_TASK_DAY,						//PC ���ö�ʱ��������
-	CMD_GET_TASK_WEEK,					//PC ��ȡ��ʱ��������
-	CMD_SET_TASK_WEEK,					//PC ���ö�ʱ��������
-	CMD_GET_DEVICE_INFO1,					//PC ��ȡ�豸��Ϣ
-	CMD_SET_DEVICE_INFO1	,				//PC �����豸��Ϣ
+	CMD_CONNECT = 0x01,                  		//连接命令
+	CMD_REALTIME_LOG,					//主动上传记录
+	CMD_UPLOAD_FINGER,					//上传指纹
+	CMD_GET_LOG,						//PC获取记录
+	CMD_GET_USER_REG,					//PC获取用户注册信息
+	CMD_SET_USER_REG,					//PC下发用户注册信息
+	CMD_DEL_USER_REG,					//PC用户删除
+	CMD_MOD_PRVILEGE,					//PC下发权限设置
+	CMD_GET_ALL_USERID,					//PC 获取用户列表
+	CMD_DEL_DATA,						//PC 删除数据记录
+	CMD_UPGRADE_ADDR,					//PC 下发升级地址
+	CMD_SET_TIME,                  				//PC 设置时间
+	CMD_GET_TIME,						//PC获取时间	
+	//门禁功能
+	CMD_GET_PASSTIME,						//PC 获取门禁PASSTIME
+	CMD_SET_PASSTIME,						//PC 设置门禁PASSTIME
+	CMD_GET_GROUPTIME,					//PC 获取门禁GROUPTIME
+	CMD_SET_GROUPTIME,					//PC 获取门禁GROUPTIME
+	CMD_GET_USERCTRL,						//PC 获取用户控制
+	CMD_SET_USERCTRL,						//PC 设置用户控制
+	CMD_GET_DOOR_KEY,						//PC 获取门禁控制参数
+	CMD_SET_DOOR_KEY,						//PC 设置门禁控制参数
+	CMD_GET_SOFTKEY,						//PC 获取快捷键
+	CMD_SET_SOFTKEY,						//PC 设置快捷键
+	CMD_GET_DEVICE_STATUS1,				//PC 获取设备状态
+	CMD_GET_DOOR_STATE,					//PC 获取门状态
+	CMD_SET_DOOR_STATE	,				//PC 设置门状态
+	CMD_GET_BELL,							//PC 获取电铃
+	CMD_SET_BELL,							//PC 设置电铃
+	CMD_GET_TASK_TIME_RANGE,				//PC 获取定时任务时间范围
+	CMD_SET_TASK_TIME_RANGE,				//PC 设置定时任务时间范围
+	CMD_GET_TASK_DAY,						//PC 获取定时任务日期
+	CMD_SET_TASK_DAY,						//PC 设置定时任务日期
+	CMD_GET_TASK_WEEK,					//PC 获取定时任务星期
+	CMD_SET_TASK_WEEK,					//PC 设置定时任务星期
+	CMD_GET_DEVICE_INFO1,					//PC 获取设备信息
+	CMD_SET_DEVICE_INFO1	,				//PC 设置设备信息
 
-	//����������Ҫ������
-	CMD_SET_MAC,							//����MAC��ַ
+	//下面是我需要的设置
+	CMD_SET_MAC,							//设置MAC地址
 
 };
 
-//�������־
+//错误码标志
 enum{
 		ERROR_OK,
 		DEL_ALL_DATA_ERROR,	
@@ -566,7 +566,7 @@ enum{
 
 
 
-//Э���ͷ
+//协议包头
 typedef struct 
 {
 	u32		Head;
@@ -577,11 +577,11 @@ typedef struct
 	u32		Datalen;
 }PACK_HEAD;				//24byte
 
-//CMD_CONNECT�����ֵ����ݰ�
+//CMD_CONNECT命令字的数据包
 typedef	struct ConnectInfo
 {
-	u8		mVersion[32];//�汾��
-	u32		DeviceId;//�豸Ψһ��
+	u8		mVersion[32];//版本号
+	u32		DeviceId;//设备唯一号
 	union{
 			u8		mReserved[32];
 			struct DeviceConnectInfo
@@ -595,14 +595,14 @@ typedef	struct ConnectInfo
 		}xxx;
 }st_connectInfo;
 
-//�޸�Ȩ����Ҫ�����ݽṹ
+//修改权限需要的数据结构
 typedef struct UserPrvilege
 {
 	u64  	UserID;
-	u32		Prvilege;  //0����ͨ 1:��������Ա 2:ע�����Ա 
+	u32		Prvilege;  //0：普通 1:超级管理员 2:注册管理员 
 }st_UserPrvilege;
 
-//��ȡ���·��û�ע����Ϣ�����ݽṹ
+//获取和下发用户注册信息的数据结构
 typedef struct GetUser
 {
 	u64 	UserID;
@@ -619,7 +619,7 @@ typedef struct UserInfo
 	char 	UserName[24];
 }st_UserInfo;  //8+4+4+4+4+24=48
 
-//��ȡ�û�ID���ݽṹ
+//获取用户ID数据结构
 typedef struct UserID
 {
 	u64 	UserID;
@@ -628,7 +628,7 @@ typedef struct UserID
 	u8    name[24];
 }st_UserID;
 
-//pc��ȡ��¼���ݽṹ
+//pc获取记录数据结构
 typedef struct GetGLogCondition
 {
 	u64	UserID;
@@ -643,7 +643,7 @@ typedef struct GetGLogConditionEx
 	u64	EndIndex;
 }st_GetGLogConditionEx;//16
 
-//��¼�ṹ
+//记录结构
 typedef struct GLog
 {
 	u64	UserID;
@@ -653,7 +653,7 @@ typedef struct GLog
 	u32  Index;
 }st_GLog;
 
-//ָ�ƽṹ
+//指纹结构
 typedef struct FingerData
 {
 	u64	UserID;
@@ -692,14 +692,14 @@ u8 web2_send_glog(ALOG_INFO *pLogData);
 u8 web2_send_data(PACK_HEAD* vCMD,void *data,u32 datalen);
 void web2_make_packhead(PACK_HEAD *packhead,u32 datalen,PACK_HEAD* vCMD);
 
-//���ڷ��ͺ�͵ȴ����ܵĺ������������ڴ�ѭ����
-//ȥ�ȴ����ܣ����ٷ��ͳ�ͻ
-u8 web2_recv_data(int timeout);//ʱ�䵥λ��ms
+//用于发送后就等待接受的函数，而不是在大循环中
+//去等待接受，减少发送冲突
+u8 web2_recv_data(int timeout);//时间单位是ms
 void ks(u8 *sendbuf,int buflen);
 void ks_f(u8 *sendbuf,int buflen);
 
 ///////////////////////////////////////////////////////////////
-//������http�Ķ���
+//下面是http的东西
 typedef enum socket_type { SERVER_TYPE = 0, CLIENT_TYPE } s_type;
 typedef enum socket_state{ CONN_ERROR = -1, CONN_OK = 0, CONN_WAIT = 1 } s_state;
 
@@ -750,3 +750,4 @@ int comm_socksend(HFILE hSock, void *pBuffer, int len);
 
 
 #endif /*__COM_H__*/
+

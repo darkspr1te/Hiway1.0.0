@@ -59,30 +59,30 @@
 
 #define FLASH_CHECKSUM_SIGN		0x20100115
 #define LNSC_FIRST_DATE			"2011.08.29"
-//#define	LNSC_SERIAL				"SB3300-0003"//�޸�����������ϴ���֤��Ϣ
-#define	LNSC_SERIAL				"SB3300-0004"//�޸���ȡ�û���Ϣbug��20130130
+//#define	LNSC_SERIAL				"SB3300-0003"//修改链接命令和上传验证信息
+#define	LNSC_SERIAL				"SB3300-0004"//修复获取用户信息bug，20130130
 #define LNSC_TRADEMARK			"COMET"	/*In SB3500ASETDlg.cpp, this string must be changed*/
 #define LNSC_PRODUCTNAME		"E60P"
 #define LNSC_PRODUCTTYPE		"TR"
 #define LNSC_ENGINEVERSION		"SmackFinger3.0"
-#if (CardType==1)  //ID��
-//#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1539.00"    //ע�ⲻҪ����28bit,�汾���ܺŵ�9,10λ����Ϊ1.  zwh 2010.10.14    xf 091106  E60=V1.0 E60B=V6.0 
-//#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1539.01"//2013.04.18�޸�����bug
+#if (CardType==1)  //ID卡
+//#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1539.00"    //注意不要超过28bit,版本功能号第9,10位必须为1.  zwh 2010.10.14    xf 091106  E60=V1.0 E60B=V6.0 
+//#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1539.01"//2013.04.18修复兼容bug
 //#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1540.00"
-//#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1541.00"//���������紫������㷨
-//A��ʾ�������ͣ�SX��ʾ375ƽ̨��
-//#define LNSC_FIRMWAREVERSION	"Asx-v2.0.0.130428"//����ΰ汾��ʼʹ���µİ汾������ʽ
-//#define LNSC_FIRMWAREVERSION	"Asx-v2.1.0.130428"//�޸�id��ע���ϴ���������
-//#define LNSC_FIRMWAREVERSION	"Asx-v2.1.0.130506"//���ӿ���ע��
-//#define LNSC_FIRMWAREVERSION	"Asx-v2.1.0.130507"//��������mac��ַ����
-#define LNSC_FIRMWAREVERSION	"Asx-v2.1.0.130510"//������������
+//#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1541.00"//升级到网络传输加密算法
+//A表示考勤类型，SX表示375平台，
+//#define LNSC_FIRMWAREVERSION	"Asx-v2.0.0.130428"//从这次版本开始使用新的版本管理方式
+//#define LNSC_FIRMWAREVERSION	"Asx-v2.1.0.130428"//修复id卡注册上传死机问题
+//#define LNSC_FIRMWAREVERSION	"Asx-v2.1.0.130506"//增加卡的注册
+//#define LNSC_FIRMWAREVERSION	"Asx-v2.1.0.130507"//增加设置mac地址命令
+#define LNSC_FIRMWAREVERSION	"Asx-v2.1.0.130510"//增加姓名下载
 
-//ֻʹ��ID��Ƭ�Ŀ����汾��¼
-//#define LNSC_FIRMWAREVERSION	"Asx-v2.9.0.130509"//ֻID�����Ĺ���
+//只使用ID卡片的开发版本记录
+//#define LNSC_FIRMWAREVERSION	"Asx-v2.9.0.130509"//只ID读卡的功能
 
-#elif (CardType==2)  //IC��
-//#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1536.01"    //ע�ⲻҪ����28bit,�汾���ܺŵ�9,10λ����Ϊ1.  zwh 2010.10.14    xf 091106  E60=V1.0 E60B=V6.0 
-#define LNSC_FIRMWAREVERSION	"Asx-v2.8.0.130510" //ֻIC�����Ĺ���
+#elif (CardType==2)  //IC卡
+//#define LNSC_FIRMWAREVERSION	"SB3300-5K v1.35.1536.01"    //注意不要超过28bit,版本功能号第9,10位必须为1.  zwh 2010.10.14    xf 091106  E60=V1.0 E60B=V6.0 
+#define LNSC_FIRMWAREVERSION	"Asx-v2.8.0.130510" //只IC读卡的功能
 #endif
 
 #define LNSC_HARDWAREVERSION	"v1.3"           //xf 091106   
@@ -253,9 +253,9 @@ typedef enum
 	EVENT_ALARM_ON,                   // [0]=AlarmType, [1]=ID
 	EVENT_ALARM_OFF,                  // [0]=AlarmType, [1]=AlarmReleaseType, [2]=ID
 	EVENT_HEART,                      // [0]=event_heart
-	EVENT_ENROLL_GET_NAME,			//ע��ʱ��ȡ����
-	EVENT_ENROLL_GET_FINGER_DATA,		//ע�᷵��ָ��ģ��
-	EVENT_VERIFY_GET_DATA,			//��֤ʱ��ȡ��Ӧ����
+	EVENT_ENROLL_GET_NAME,			//注册时获取姓名
+	EVENT_ENROLL_GET_FINGER_DATA,		//注册返回指纹模板
+	EVENT_VERIFY_GET_DATA,			//认证时获取相应数据
 	EVENT_TIMESYN,
 	EVENT_ENROLL_GET_FINGER_IMAGE,
 	EVENT_GLOG_LONG,
@@ -982,3 +982,4 @@ BOOL DbGLogSetReadPosOnly(int nPos);
 BOOL DbSetupTotalWriteOnly( void);
 
 #endif /*__DATABASE_H__*/
+

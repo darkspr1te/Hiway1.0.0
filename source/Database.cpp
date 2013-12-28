@@ -558,7 +558,7 @@ BOOL DbLicenseRead(void)
 		strcpy(dbLicense.szFirmwareVersion, LNSC_FIRMWAREVERSION);
 		dbLicense.nMaxEnrollCount = gFpMaximum;
 #if AE_372X		
-		//ÎªÁËÐÞ¸ÄÏÔÊ¾Îª2000¶ø¸Ä¶¯£¬ÕæÊµÊÇ5000£¬¸´Î»Ê±ÉèÖÃµÄ
+		//ä¸ºäº†ä¿®æ”¹æ˜¾ç¤ºä¸º2000è€Œæ”¹åŠ¨ï¼ŒçœŸå®žæ˜¯5000ï¼Œå¤ä½æ—¶è®¾ç½®çš„
 		//dbLicense.nMaxEnrollCount = gFpMaximum;
 		int gFpMaximum_back = 2000;
 		memcpy(&gFpMaximum,&gFpMaximum_back,4);
@@ -727,14 +727,14 @@ BOOL DbSetupTotalRead(BOOL bBackupCheck /*= TRUE*/)
 	DbParamInfoLoad();
 	bRet = DbLicenseRead();
 #if 	AE_372X
-	//ÎªÁËÈÃ´æ´¢Îª2000ÎªÌØÒâ¼ÙµÄ¹æ¶¨
+	//ä¸ºäº†è®©å­˜å‚¨ä¸º2000ä¸ºç‰¹æ„å‡çš„è§„å®š
 	int gFpMaximum_back = 2000;
 	memcpy(&gFpMaximum,&gFpMaximum_back,4);
 	dbLicense.nMaxEnrollCount = 2000;
 #endif
 
 #if 	AE_375X	
-	//dbLicense.bOnLineEnroll = TRUE;//¶¨ÖÆÔÚÏß×¢²áÊ¹ÓÃ
+	//dbLicense.bOnLineEnroll = TRUE;//å®šåˆ¶åœ¨çº¿æ³¨å†Œä½¿ç”¨
 	dbLicense.nMaxEnrollCount = gFpMaximum;
 #endif
 
@@ -874,7 +874,7 @@ BOOL DbSetupTotalRead(BOOL bBackupCheck /*= TRUE*/)
 		dbSetupTotal.setSystem.nVerifyMode = VM_ANY;
 		dbSetupTotal.setSystem.dwSManagerPwd = STRING2PWD("0");    
 		//dbSetupTotal.setSystem.bDHCPUse = FALSE;
-		dbSetupTotal.setSystem.bDHCPUse = TRUE;//¸Ä¶¯µÄ
+		dbSetupTotal.setSystem.bDHCPUse = TRUE;//æ”¹åŠ¨çš„
 		
 		dbSetupTotal.setSystem.byAntipassStatus = ANTIPASS_NO;
 		dbSetupTotal.setSystem.bPwdAlarmUse = FALSE;
@@ -897,7 +897,7 @@ BOOL DbSetupTotalRead(BOOL bBackupCheck /*= TRUE*/)
 
 
 		memset(&dbSetupTotal.setSystem.szHostByName, 0, sizeof(dbSetupTotal.setSystem.szHostByName));
-		//ÕâÀïÈç¹ûÐèÒªÐèÒªÉèÖÃÇëÇóÖ÷»úÃû×Ö£¬·ñÔòÄ¬ÈÏ¾ÍÊÇÇëÇóºóÌ¨µçÄÔ
+		//è¿™é‡Œå¦‚æžœéœ€è¦éœ€è¦è®¾ç½®è¯·æ±‚ä¸»æœºåå­—ï¼Œå¦åˆ™é»˜è®¤å°±æ˜¯è¯·æ±‚åŽå°ç”µè„‘
 		//strcpy(dbSetupTotal.setSystem.szHostByName,"loveywm");
 		
 		//
@@ -2293,7 +2293,7 @@ xprintf("eeeeeeee\r\n");
 	if (nBackup >= BACKUP_FINGER0 && nBackup <= BACKUP_FINGER9)
 	{
 	xprintf("111111\r\n");
-		if (!DbFpSetPointer(nPos, nBackup, pData, bNoMatch, bFlashWrite))// ËÀÔÚÕâÀï
+		if (!DbFpSetPointer(nPos, nBackup, pData, bNoMatch, bFlashWrite))// æ­»åœ¨è¿™é‡Œ
 		{
 			bRet = FALSE;
 			xprintf("ffffffff\r\n");
@@ -4676,7 +4676,7 @@ int	DbGLogGetByTime_and_byID(ALOG_INFO *pLogBuffer,int from,int to, u32 fromseco
 		xprintf("logtemp.dwSeconds=%d \r\n", logtemp.dwSeconds);
 		xprintf("tosecond=%d \r\n", tosecond);
 		
-		if((logtemp.dwSeconds>=fromsecond) && (logtemp.dwSeconds<=tosecond) && (logtemp.nID == id))//¸Ä¶¯µØ·½
+		if((logtemp.dwSeconds>=fromsecond) && (logtemp.dwSeconds<=tosecond) && (logtemp.nID == id))//æ”¹åŠ¨åœ°æ–¹
 		{
            		//if(buf)
       	   		//{
@@ -4731,7 +4731,7 @@ int DbGLogGetByindex(ALOG_INFO *pLogBuffer,int from,int to)
 		else if (result == -1) //ERROR
 			memset(&logtemp, 0, sizeof(ALOG_INFO));
 		xprintf("logtemp.dwSeconds=%d \r\n", logtemp.dwSeconds);
-		//if(logtemp.dwSeconds>=fromsecond && logtemp.dwSeconds<=tosecond && logtemp.nID == id)//¸Ä¶¯µØ·½
+		//if(logtemp.dwSeconds>=fromsecond && logtemp.dwSeconds<=tosecond && logtemp.nID == id)//æ”¹åŠ¨åœ°æ–¹
 		//{
            	if(buf)
       	   	{
@@ -4747,5 +4747,6 @@ int DbGLogGetByindex(ALOG_INFO *pLogBuffer,int from,int to)
 	FD_CLOSE(fd);
 	return (nCount);
 }
+
 
 

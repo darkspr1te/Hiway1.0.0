@@ -112,7 +112,7 @@ int connect_nonb(int sockfd, struct sockaddr *saptr, socklen_t salen, int nsec)
        fd_set rset, wset;
        struct timeval tval;
 
-       // »ñÈ¡µ±Ç°socketµÄÊôĞÔ£¬ ²¢ÉèÖÃ noblocking ÊôĞÔ
+       // è·å–å½“å‰socketçš„å±æ€§ï¼Œ å¹¶è®¾ç½® noblocking å±æ€§
        flags = fcntl(sockfd, F_GETFL, 0);
        fcntl(sockfd, F_SETFL, flags | O_NONBLOCK);
        errno = 0;
@@ -122,26 +122,26 @@ int connect_nonb(int sockfd, struct sockaddr *saptr, socklen_t salen, int nsec)
 		//xprintf("error==%d\r\n",errno);	
 		//xprintf("n==%d\r\n",EINPROGRESS);
 		//xprintf("EINPROGRESS==%d\r\n",n);
-		//Èç¹û²»ÊÇ×èÈû´íÎó¾Í·µ»Ø£¬×èÈûµÄ»°¾Í¼ÌĞøÖ´ĞĞÏÂÃæµÄ´¦Àí	
-		if (errno != EINPROGRESS)//Ò»¸ö×èÈûµÄÌ×½Ó¿Úµ÷ÓÃÕıÔÚÔËĞĞÖĞ
+		//å¦‚æœä¸æ˜¯é˜»å¡é”™è¯¯å°±è¿”å›ï¼Œé˜»å¡çš„è¯å°±ç»§ç»­æ‰§è¡Œä¸‹é¢çš„å¤„ç†	
+		if (errno != EINPROGRESS)//ä¸€ä¸ªé˜»å¡çš„å¥—æ¥å£è°ƒç”¨æ­£åœ¨è¿è¡Œä¸­
                    	  return (-1);
        }
-       // ¿ÉÒÔ×öÈÎºÎÆäËüµÄ²Ù×÷
+       // å¯ä»¥åšä»»ä½•å…¶å®ƒçš„æ“ä½œ
       
        
        if (n == 0)
-              goto done; // Ò»°ãÊÇÍ¬Ò»Ì¨Ö÷»úµ÷ÓÃ£¬»á·µ»Ø 0
+              goto done; // ä¸€èˆ¬æ˜¯åŒä¸€å°ä¸»æœºè°ƒç”¨ï¼Œä¼šè¿”å› 0
 
        FD_ZERO(&rset);
        FD_SET(sockfd, &rset);
 
-       wset = rset;  // ÕâÀï»á×ö block copy
+       wset = rset;  // è¿™é‡Œä¼šåš block copy
        tval.tv_sec = nsec;
        tval.tv_usec = 0;
 
-       // Èç¹ûnsec Îª0£¬½«Ê¹ÓÃÈ±Ê¡µÄ³¬Ê±Ê±¼ä£¬¼´Æä½á¹¹Ö¸ÕëÎª NULL
+       // å¦‚æœnsec ä¸º0ï¼Œå°†ä½¿ç”¨ç¼ºçœçš„è¶…æ—¶æ—¶é—´ï¼Œå³å…¶ç»“æ„æŒ‡é’ˆä¸º NULL
 
-       // Èç¹ûtval½á¹¹ÖĞµÄÊ±¼äÎª0£¬±íÊ¾²»×öÈÎºÎµÈ´ı£¬Á¢¿Ì·µ»Ø
+       // å¦‚æœtvalç»“æ„ä¸­çš„æ—¶é—´ä¸º0ï¼Œè¡¨ç¤ºä¸åšä»»ä½•ç­‰å¾…ï¼Œç«‹åˆ»è¿”å›
 
       //if ((n = select(sockfd+1, &rset, &wset, NULL,&tval)) == 0) 
        if ((n = select(sockfd+1, &rset, &wset, NULL,&tval)) < 1) 
@@ -159,7 +159,7 @@ int connect_nonb(int sockfd, struct sockaddr *saptr, socklen_t salen, int nsec)
 
  done:
 
-       fcntl(sockfd, F_SETFL, flags); // »Ö¸´socket ÊôĞÔ
+       fcntl(sockfd, F_SETFL, flags); // æ¢å¤socket å±æ€§
        xprintf("i am in connect_nonb2222\r\n");
        return (0);
 
@@ -179,9 +179,9 @@ unsigned int AsciiToDec(char *str)
          sscanf(str,"%d",&a);  
 	  return a;
 }
-//ÓÃÇ°ÃæµÄ×Ö·û´®ÓëºóÃæµÄÆ¥Åä£¬Èç¹û²»Æ¥ÅäÔò·µ»ØNULL
-//Èç¹û³É¹¦·µ»Ø·ÇNULL
-//Õâ¸öÓÃÓÚÅĞ¶ÏµÃµ½µÄĞÅÏ¢ÊÇ·ñĞèÒª´¦Àí
+//ç”¨å‰é¢çš„å­—ç¬¦ä¸²ä¸åé¢çš„åŒ¹é…ï¼Œå¦‚æœä¸åŒ¹é…åˆ™è¿”å›NULL
+//å¦‚æœæˆåŠŸè¿”å›éNULL
+//è¿™ä¸ªç”¨äºåˆ¤æ–­å¾—åˆ°çš„ä¿¡æ¯æ˜¯å¦éœ€è¦å¤„ç†
 char *mystrstr(char *haystack, char *needle)
 {	//assert(haystack != NULL && needle != NULL);	
 	if (strlen(haystack) < strlen(needle)) return NULL;	
@@ -238,14 +238,14 @@ char *mystrstr(char *haystack, char *needle)
 }
   
 /*
-Ïà¹Øº¯Êı£ºlongjmp, siglongjmp, setjmp 
-±íÍ·ÎÄ¼ş£º#include <setjmp.h> 
-º¯Êı¶¨Òå£ºint sigsetjmp(sigjmp_buf env, int savesigs) 
-º¯ÊıËµÃ÷£ºsigsetjmp()»á±£´æÄ¿Ç°¶ÑÕ»»·¾³£¬È»ºó½«Ä¿Ç°µÄµØÖ·×÷Ò»¸ö¼ÇºÅ£¬¶øÔÚ³ÌĞòÆäËûµØ·½µ÷ÓÃsiglongjmp()Ê±±ã»áÖ±½ÓÌøµ½Õâ¸ö¼ÇºÅÎ»ÖÃ£¬È»ºó»¹Ô­¶ÑÕ»£¬¼ÌĞø³ÌĞòºÃÖ´ĞĞ¡£ 
-²ÎÊıenvÎªÓÃÀ´±£´æÄ¿Ç°¶ÑÕ»»·¾³£¬Ò»°ãÉùÃ÷ÎªÈ«¾Ö±äÁ¿ 
-²ÎÊısavesigsÈôÎª·Ç0Ôò´ú±í¸éÖÃµÄĞÅºÅ¼¯ºÏÒ²»áÒ»¿é±£´æ 
-µ±sigsetjmp()·µ»Ø0Ê±´ú±íÒÑ¾­×öºÃ¼ÇºÅÉÏ£¬Èô·µ»Ø·Ç0Ôò´ú±íÓÉsiglongjmp£¨£©Ìø×ª»ØÀ´¡£ 
-·µ»ØÖµ  £º·µ»Ø0´ú±í¾Ö´Ù´æºÃÄ¿Ç°µÄ¶ÑÕ»»·¾³£¬ËæÊ±¿É¹©siglongjmp()µ÷ÓÃ£¬ Èô·µ»Ø·Ç0ÖµÔò´ú±íÓÉsiglongjmp()·µ»Ø 
+ç›¸å…³å‡½æ•°ï¼šlongjmp, siglongjmp, setjmp 
+è¡¨å¤´æ–‡ä»¶ï¼š#include <setjmp.h> 
+å‡½æ•°å®šä¹‰ï¼šint sigsetjmp(sigjmp_buf env, int savesigs) 
+å‡½æ•°è¯´æ˜ï¼šsigsetjmp()ä¼šä¿å­˜ç›®å‰å †æ ˆç¯å¢ƒï¼Œç„¶åå°†ç›®å‰çš„åœ°å€ä½œä¸€ä¸ªè®°å·ï¼Œè€Œåœ¨ç¨‹åºå…¶ä»–åœ°æ–¹è°ƒç”¨siglongjmp()æ—¶ä¾¿ä¼šç›´æ¥è·³åˆ°è¿™ä¸ªè®°å·ä½ç½®ï¼Œç„¶åè¿˜åŸå †æ ˆï¼Œç»§ç»­ç¨‹åºå¥½æ‰§è¡Œã€‚ 
+å‚æ•°envä¸ºç”¨æ¥ä¿å­˜ç›®å‰å †æ ˆç¯å¢ƒï¼Œä¸€èˆ¬å£°æ˜ä¸ºå…¨å±€å˜é‡ 
+å‚æ•°savesigsè‹¥ä¸ºé0åˆ™ä»£è¡¨æç½®çš„ä¿¡å·é›†åˆä¹Ÿä¼šä¸€å—ä¿å­˜ 
+å½“sigsetjmp()è¿”å›0æ—¶ä»£è¡¨å·²ç»åšå¥½è®°å·ä¸Šï¼Œè‹¥è¿”å›é0åˆ™ä»£è¡¨ç”±siglongjmpï¼ˆï¼‰è·³è½¬å›æ¥ã€‚ 
+è¿”å›å€¼  ï¼šè¿”å›0ä»£è¡¨å±€ä¿ƒå­˜å¥½ç›®å‰çš„å †æ ˆç¯å¢ƒï¼Œéšæ—¶å¯ä¾›siglongjmp()è°ƒç”¨ï¼Œ è‹¥è¿”å›é0å€¼åˆ™ä»£è¡¨ç”±siglongjmp()è¿”å› 
 */
  DWORD  gngethostbyname(char *HostName, int timeout) 
 { 
@@ -416,13 +416,13 @@ long getlength( FILE *fp )
  long cur_pos;
  long len;
  
- //È¡µÃµ±Ç°ÎÄ¼şÁ÷µÄ¶ÁÈ¡Î»ÖÃ
+ //å–å¾—å½“å‰æ–‡ä»¶æµçš„è¯»å–ä½ç½®
  cur_pos = ftell( fp );
- //½«ÎÄ¼şÁ÷µÄ¶ÁÈ¡Î»ÖÃÉèÎªÎÄ¼şÄ©Î²
+ //å°†æ–‡ä»¶æµçš„è¯»å–ä½ç½®è®¾ä¸ºæ–‡ä»¶æœ«å°¾
  fseek( fp, 0, SEEK_END );
- //»ñÈ¡ÎÄ¼şÄ©Î²µÄ¶ÁÈ¡Î»ÖÃ,¼´ÎÄ¼ş´óĞ¡
+ //è·å–æ–‡ä»¶æœ«å°¾çš„è¯»å–ä½ç½®,å³æ–‡ä»¶å¤§å°
  len = ftell( fp );
- //½«ÎÄ¼şÁ÷µÄ¶ÁÈ¡Î»ÖÃ»¹Ô­ÎªÔ­ÏÈµÄÖµ
+ //å°†æ–‡ä»¶æµçš„è¯»å–ä½ç½®è¿˜åŸä¸ºåŸå…ˆçš„å€¼
  fseek( fp, cur_pos, SEEK_SET );
  return len;
 }
@@ -612,7 +612,7 @@ bool GetLoadDHCP()
 	char gateway[30]; 
 
 
-	//////////////////// //Íø¹Ø
+	//////////////////// //ç½‘å…³
 	memset(gateway,'\0',30);
 	if(GetGateWay(gateway) )
 	{
@@ -681,7 +681,7 @@ bool GetLoadDHCP()
 	}
 
        strcpy(ifr.ifr_name, "eth0");
-	//È¡±¾»úIPµØÖ·
+	//å–æœ¬æœºIPåœ°å€
 	if(ioctl(sock, SIOCGIFADDR, &ifr) < 0)
 	{
     		return FALSE;
@@ -741,7 +741,7 @@ bool GetLoadDHCP()
 	dbComm_ipAddress = UI_IP_MAKE(ip[0], ip[1], ip[2], ip[3]);
 	
 
-	//È¡±¾»úÑÚÂë
+	//å–æœ¬æœºæ©ç 
 	if( ioctl( sock, SIOCGIFNETMASK, &ifr) == -1 )
 	{
   		 perror("[-] ioctl");
@@ -1040,7 +1040,7 @@ void DnsServerIpSet(DWORD ipPcBackground)
 	//DnsIpRead();
 }
 
-//¾²Ì¬IPÉèÖÃÊ±µ÷ÓÃ
+//é™æ€IPè®¾ç½®æ—¶è°ƒç”¨
 void DnsIpSet(DWORD ipPcBackground)
 {
 #if 1
@@ -1080,6 +1080,7 @@ void DnsIpSet(DWORD ipPcBackground)
 	
 #endif
 }
+
 
 
 

@@ -1,62 +1,62 @@
 
 /*
-	Õâ¸ö°æ±¾¹Ì¼şÀ´ÖÁÓÚ±ê×¼°æ±¾"SB3300-5K v1.35.1536.00";
-	Ö÷Òª¸Ä¶¯¾ÍÊÇ½«Ô­ÏÈµÄÍøÂ·Í¨ĞÅ·½ÃæµÄĞ­Òé¸Ä¶¯ÁË¡£
-	¸Ä¶¯µÄÎÄ¼şÖ÷ÒªÊÇcom.cppºÍcom.h
-	Ôö¼ÓµÄ¾ßÌåÄÚÈİ:
-	1:½«Ô­ÍøÂ·Í¨ĞÅ1.0¸ÄÎª2.0
-	2:Ôö¼Óhttp·½ÃæµÄÈı¸öÃüÁî£¬Ê±¼ä£¬Ö¸ÎÆ£¬¸üĞÂµØÖ·
-	3:Ö¸ÎÆÈİÁ¿±äÎª2000Ã¶¡£Ö÷ÒªÊÇ°Ñ×Ô¶¯»ñÈ¡Ö¸ÎÆÈ«¾Ö±äÁ¿gFpMaximum
-	   ÊÖ¶¯ÉèÖÃÎª2000 £»°ÑÏÔÊ¾µÄ¸Ä¶¯ÏÂ
-	//4:Ìí¼Ó¶Ôpower¼üÖµµÄ²¶×½£¬Ö÷ÒªÊÇÕÕ¹ËÓ²¼şÆ½Ì¨µÄ²»Ö§³Ö
+        è¿™ä¸ªç‰ˆæœ¬å›ºä»¶æ¥è‡³äºæ ‡å‡†ç‰ˆæœ¬"SB3300-5K v1.35.1536.00";
+        ä¸»è¦æ”¹åŠ¨å°±æ˜¯å°†åŸå…ˆçš„ç½‘è·¯é€šä¿¡æ–¹é¢çš„åè®®æ”¹åŠ¨äº†ã€‚
+        æ”¹åŠ¨çš„æ–‡ä»¶ä¸»è¦æ˜¯com.cppå’Œcom.h
+        å¢åŠ çš„å…·ä½“å†…å®¹:
+        1:å°†åŸç½‘è·¯é€šä¿¡1.0æ”¹ä¸º2.0
+        2:å¢åŠ httpæ–¹é¢çš„ä¸‰ä¸ªå‘½ä»¤ï¼Œæ—¶é—´ï¼ŒæŒ‡çº¹ï¼Œæ›´æ–°åœ°å€
+        3:æŒ‡çº¹å®¹é‡å˜ä¸º2000æšã€‚ä¸»è¦æ˜¯æŠŠè‡ªåŠ¨è·å–æŒ‡çº¹å…¨å±€å˜é‡gFpMaximum
+           æ‰‹åŠ¨è®¾ç½®ä¸º2000 ï¼›æŠŠæ˜¾ç¤ºçš„æ”¹åŠ¨ä¸‹
+        //4:æ·»åŠ å¯¹poweré”®å€¼çš„æ•æ‰ï¼Œä¸»è¦æ˜¯ç…§é¡¾ç¡¬ä»¶å¹³å°çš„ä¸æ”¯æŒ
 
-	ĞŞ¸ÄÈË:Ò¦Î°Ãñ£¬date:2012.11.09
+        ä¿®æ”¹äºº:å§šä¼Ÿæ°‘ï¼Œdate:2012.11.09
 */
 
 //************************************************************************
-//loveywmÔÚ2013.01.22ÈÕĞŞ¸ÄÁËcom.cppÏÂµÄweb2_cmd_get_user_reg()
-//ºÍweb2_cmd_set_user_reg();Á½¸öº¯Êı
+//loveywmåœ¨2013.01.22æ—¥ä¿®æ”¹äº†com.cppä¸‹çš„web2_cmd_get_user_reg()
+//å’Œweb2_cmd_set_user_reg();ä¸¤ä¸ªå‡½æ•°
 
 //************************************************************************
-//2013.01.30 ĞŞ¸´com.cppÏÂweb2_cmd_get_user_reg();º¯ÊıÏÂµÄbug£¬ÔÚ»ñÈ¡ÓÃ»§ĞÅÏ¢Ê±
-//ÍüÁË·¢ËÍÓÃ»§ĞÅÏ¢ÁË¡£
-//°æ±¾ºÅÉı¼¶Îª"SB3300-5K v1.35.1537.00"
+//2013.01.30 ä¿®å¤com.cppä¸‹web2_cmd_get_user_reg();å‡½æ•°ä¸‹çš„bugï¼Œåœ¨è·å–ç”¨æˆ·ä¿¡æ¯æ—¶
+//å¿˜äº†å‘é€ç”¨æˆ·ä¿¡æ¯äº†ã€‚
+//ç‰ˆæœ¬å·å‡çº§ä¸º"SB3300-5K v1.35.1537.00"
 
 //************************************************************************
-//2013.02.01ĞŞ¸´com.cppÏÂu8 web2_cmd_get_log( );º¯ÊıÏÂµÄÈ¡Öµ´íÎóbug£¬
-//Ö÷ÒªÊÇÖ¸ÕëÖ¸¶¨Î»ÖÃÓĞÎó¡£ÁíÍâ½«ËùÓĞ»ñÈ¡Ê±¼äµÄ´«Öµ
-//µÄÊ±¼äÀÛ¶¼»»Îªu32£¬ÏÈÇ°µÄintĞĞ×îºó²»Òª¡£
-//°æ±¾ºÅÉı¼¶Îª"SB3300-5K v1.35.1538.00"
+//2013.02.01ä¿®å¤com.cppä¸‹u8 web2_cmd_get_log( );å‡½æ•°ä¸‹çš„å–å€¼é”™è¯¯bugï¼Œ
+//ä¸»è¦æ˜¯æŒ‡é’ˆæŒ‡å®šä½ç½®æœ‰è¯¯ã€‚å¦å¤–å°†æ‰€æœ‰è·å–æ—¶é—´çš„ä¼ å€¼
+//çš„æ—¶é—´ç´¯éƒ½æ¢ä¸ºu32ï¼Œå…ˆå‰çš„intè¡Œæœ€åä¸è¦ã€‚
+//ç‰ˆæœ¬å·å‡çº§ä¸º"SB3300-5K v1.35.1538.00"
 
 //************************************************************************
-//loveywmÔÚ2013.02.21ÈÕĞŞ¸´ÁËÈçÏÂbug:
-//a:ÉÏ´«ÑéÖ¤ĞÅÏ¢Ê±¼äË³ĞòÎÉÂÒ
-//b:´æÔÚÖØ¸´ÉÏ´«¼ÇÂ¼£¬µ«Ë÷ÒıÈ´²»Í¬
-//Ô­Òò:Ö÷ÒªÊÇ¶ÏÍø±£´æµÄÑéÖ¤ĞÅÏ¢ÔÚÁ¬ÉÏÍøÂçºóÉÏ´«µÄÊ±¼ä
-//ÄÚÓÖ´æÔÚ´ò¿¨ÑéÖ¤¶¯×÷£¬´Ó¶øµ¼ÖÂÊ±¼ä´íÎóºÍÖØ¸´ÉÏ´«
-//½â¾ö·½·¨:ÔÚÑéÖ¤ÉÏ´«º¯ÊıÖĞ¼ÓÈë¶Ô»úÆ÷ÊÇ·ñÓĞÃ»ÑéÖ¤¼ÇÂ¼
-//ÉÏ´«µÄÅĞ¶Ï£¬¼ûuiLogGlogAdd()º¯ÊıµÄĞŞ¸Ä
-//Ôö¼ÓÈçÏÂbugĞŞ¸´
-//a:ÔÚº¯Êıweb2_send_data()ĞŞ¸´·µ»ØÖµµÄÕıÈ·ÅĞ¶Ï
-//b:Ôö¼Óº¯Êıu8 web2_recv_data(int timeout)£¬Ö÷ÒªÊÇÖ÷¶¯µÈ´ıpc»Ø¸´
-//Ëû±»ÓÃÓÚÏÂÃæÈı¸öº¯Êıweb2_send_finger£¬web2_send_glog£¬make_connect
-//bĞŞ¸´µÄºÃ´¦:ÏÈÇ°´¦Àí·¢ËÍºóµÄ½ÓÊÜ¶¼ÊÇÔÚÖ÷Ñ­»·µÈ´ı½ÓÊÜµÄ
-//ĞŞ¸ÄºóÊÇ·¢ËÍºó¾ÍµÈ´ıÒ»¶ÎÊ±¼ä½ÓÊÜ£¬·ÀÖ¹½ÓÊÜÎÉÂÒ
-//!!!´æÔÚÎÊÌâ:½ÓÊÜÊ±¼ä²»ºÃÈ·¶¨£¬±ÈÈçÍøÂç²»ÎÈ¶¨Ôì³ÉÓ°ÏìµÈ
-//???´ı¸Ä½øÎÊÌâ:ÉÏ´«µÄÑéÖ¤ĞÅÏ¢ÖĞµÄË÷ÒıÔÚ¶ÏµçºóÔÚ´Î´Ó0¿ªÊ¼
-//°æ±¾ºÅÉı¼¶Îª"SB3300-5K v1.35.1539.00"
-//???´ı¸Ä½øÎÊÌâÒÑĞŞ¸´£¬¼ûº¯Êıweb2_send_glog
+//loveywmåœ¨2013.02.21æ—¥ä¿®å¤äº†å¦‚ä¸‹bug:
+//a:ä¸Šä¼ éªŒè¯ä¿¡æ¯æ—¶é—´é¡ºåºç´Šä¹±
+//b:å­˜åœ¨é‡å¤ä¸Šä¼ è®°å½•ï¼Œä½†ç´¢å¼•å´ä¸åŒ
+//åŸå› :ä¸»è¦æ˜¯æ–­ç½‘ä¿å­˜çš„éªŒè¯ä¿¡æ¯åœ¨è¿ä¸Šç½‘ç»œåä¸Šä¼ çš„æ—¶é—´
+//å†…åˆå­˜åœ¨æ‰“å¡éªŒè¯åŠ¨ä½œï¼Œä»è€Œå¯¼è‡´æ—¶é—´é”™è¯¯å’Œé‡å¤ä¸Šä¼ 
+//è§£å†³æ–¹æ³•:åœ¨éªŒè¯ä¸Šä¼ å‡½æ•°ä¸­åŠ å…¥å¯¹æœºå™¨æ˜¯å¦æœ‰æ²¡éªŒè¯è®°å½•
+//ä¸Šä¼ çš„åˆ¤æ–­ï¼Œè§uiLogGlogAdd()å‡½æ•°çš„ä¿®æ”¹
+//å¢åŠ å¦‚ä¸‹bugä¿®å¤
+//a:åœ¨å‡½æ•°web2_send_data()ä¿®å¤è¿”å›å€¼çš„æ­£ç¡®åˆ¤æ–­
+//b:å¢åŠ å‡½æ•°u8 web2_recv_data(int timeout)ï¼Œä¸»è¦æ˜¯ä¸»åŠ¨ç­‰å¾…pcå›å¤
+//ä»–è¢«ç”¨äºä¸‹é¢ä¸‰ä¸ªå‡½æ•°web2_send_fingerï¼Œweb2_send_glogï¼Œmake_connect
+//bä¿®å¤çš„å¥½å¤„:å…ˆå‰å¤„ç†å‘é€åçš„æ¥å—éƒ½æ˜¯åœ¨ä¸»å¾ªç¯ç­‰å¾…æ¥å—çš„
+//ä¿®æ”¹åæ˜¯å‘é€åå°±ç­‰å¾…ä¸€æ®µæ—¶é—´æ¥å—ï¼Œé˜²æ­¢æ¥å—ç´Šä¹±
+//!!!å­˜åœ¨é—®é¢˜:æ¥å—æ—¶é—´ä¸å¥½ç¡®å®šï¼Œæ¯”å¦‚ç½‘ç»œä¸ç¨³å®šé€ æˆå½±å“ç­‰
+//???å¾…æ”¹è¿›é—®é¢˜:ä¸Šä¼ çš„éªŒè¯ä¿¡æ¯ä¸­çš„ç´¢å¼•åœ¨æ–­ç”µååœ¨æ¬¡ä»0å¼€å§‹
+//ç‰ˆæœ¬å·å‡çº§ä¸º"SB3300-5K v1.35.1539.00"
+//???å¾…æ”¹è¿›é—®é¢˜å·²ä¿®å¤ï¼Œè§å‡½æ•°web2_send_glog
 
-//Ö»ÓĞ·µ»ØË÷ÒıÓëÉÏ´«µÄ¶ÔÓ¦²Å¼Ó1 modify:2013.03.29 web2_realtime_log
+//åªæœ‰è¿”å›ç´¢å¼•ä¸ä¸Šä¼ çš„å¯¹åº”æ‰åŠ 1 modify:2013.03.29 web2_realtime_log
 
 
-//ĞŞ¸ÄÊı¾İ½ÓÊÜ¼æÈİÎÊÌâmodify:2013.04.18.web2_cmd_set_user_reg
-//°æ±¾ºÅÉı¼¶Îª"SB3300-5K v1.35.1539.01"
+//ä¿®æ”¹æ•°æ®æ¥å—å…¼å®¹é—®é¢˜modify:2013.04.18.web2_cmd_set_user_reg
+//ç‰ˆæœ¬å·å‡çº§ä¸º"SB3300-5K v1.35.1539.01"
 
-//ĞŞ¸ÄĞÕÃû¼æÈİÎÊÌâ£¬¹Ì¼ş¸üĞÂµÄbug! modify2013.04.19  web2_cmd_set_user_reg web2_cmd_get_all_userid http_updata_firmware
-//°æ±¾ºÅÉı¼¶Îª"SB3300-5K v1.35.1540.00"
+//ä¿®æ”¹å§“åå…¼å®¹é—®é¢˜ï¼Œå›ºä»¶æ›´æ–°çš„bug! modify2013.04.19  web2_cmd_set_user_reg web2_cmd_get_all_userid http_updata_firmware
+//ç‰ˆæœ¬å·å‡çº§ä¸º"SB3300-5K v1.35.1540.00"
 
-//2013.05.06Ôö¼Ó¿¨µÄ×¢²áweb2_cmd_set_user_reg
+//2013.05.06å¢åŠ å¡çš„æ³¨å†Œweb2_cmd_set_user_reg
 
 
 #include "precomp.h"
@@ -75,42 +75,42 @@ BOOL SB3500A_LOAD();
 
 
 
-/////////////////////////////Ö÷º¯Êı/////////////////////////////////////////////
+/////////////////////////////ä¸»å‡½æ•°/////////////////////////////////////////////
 int main(int argc, char ** argv)
 {
-	BOOL bFirst = TRUE;
+        BOOL bFirst = TRUE;
 
 
-	Q_INIT_RESOURCE(sb3000);
+        Q_INIT_RESOURCE(sb3000);
 
-	QApplication app(argc, argv);
+        QApplication app(argc, argv);
 
-	app.setFont(SB_FONT_3());
-	app.setFont(SB_FONT_4(), "QLineEdit");
+        app.setFont(SB_FONT_3());
+        app.setFont(SB_FONT_4(), "QLineEdit");
 
-	app.setStyle(new CustomStyle);
-	QTextCodec::setCodecForTr(QTextCodec::codecForName(TEXTCODEC));
+        app.setStyle(new CustomStyle);
+        QTextCodec::setCodecForTr(QTextCodec::codecForName(TEXTCODEC));
 
-	if (!SB3500A_LOAD())
-	{
-		printf("Database Load fail\n");
-		comm_sendtime();
-		return 0;
-	}
+        if (!SB3500A_LOAD())
+        {
+                printf("Database Load fail\n");
+                comm_sendtime();
+                return 0;
+        }
         printf("%s", "Database Load Succeed\n");
 
-	while (1)
-	{
-		CMainWindow *w = new CMainWindow();
-		if (w)
-		{
+        while (1)
+        {
+                CMainWindow *w = new CMainWindow();
+                if (w)
+                {
                     printf("hiway5\n");
                     uiProcMain(bFirst);
                     delete w;
-		}
-		bFirst = FALSE;
-	}
-	return 0;
+                }
+                bFirst = FALSE;
+        }
+        return 0;
 }
 
 BOOL InitFpLibrary(void);
@@ -119,15 +119,15 @@ BOOL SB3500A_LOAD()
 {
         //BOOL bFpLibraryLoad = InitFpLibrary();
 
-	if (SB3000DEV_INIT1() != DEVERR_SUCCESS)
-	{
-		//uiLcdMessageBox(UI_MSG_ERROR, UISTR_DEVICE_ERROR, UITIME_OUT);
+        if (SB3000DEV_INIT1() != DEVERR_SUCCESS)
+        {
+                //uiLcdMessageBox(UI_MSG_ERROR, UISTR_DEVICE_ERROR, UITIME_OUT);
                 /*while (1)
                 {
                         BUZZER_START(); LED_G_ON(); LED_R_ON(); DelayMiliSecond(500);
                         BUZZER_STOP();  LED_G_OFF();LED_R_OFF();DelayMiliSecond(500);
                 }*/
-	}
+        }
         printf("After SB3000DEV_INIT1()\n");
         //if (!bFpLibraryLoad)
         //{
@@ -135,52 +135,52 @@ BOOL SB3500A_LOAD()
                 //while (1) {};
         //}
 
-	BOOL bRet = DbSetupTotalRead();
-	
+        BOOL bRet = DbSetupTotalRead();
+
         printf("After DbSetupTotalRead()\n");
 
-	if (SB3000DEV_INIT2() != DEVERR_SUCCESS)
-	{
-		//uiLcdMessageBox(UI_MSG_ERROR, UISTR_DEVICE_ERROR, UITIME_OUT);
+        if (SB3000DEV_INIT2() != DEVERR_SUCCESS)
+        {
+                //uiLcdMessageBox(UI_MSG_ERROR, UISTR_DEVICE_ERROR, UITIME_OUT);
                 /*while (1)
-		{
-			BUZZER_START(); LED_G_ON(); LED_R_ON(); DelayMiliSecond(500);
-			BUZZER_STOP();  LED_G_OFF();LED_R_OFF();DelayMiliSecond(500);
+                {
+                        BUZZER_START(); LED_G_ON(); LED_R_ON(); DelayMiliSecond(500);
+                        BUZZER_STOP();  LED_G_OFF();LED_R_OFF();DelayMiliSecond(500);
                 }*/
-	}
-	//È¡Ïû·şÎñ¶Ë	
-	//comm_tcpserver_init();
+        }
+        //å–æ¶ˆæœåŠ¡ç«¯
+        //comm_tcpserver_init();
         printf("After SB3000DEV_INIT2()\n");
-	
-	LCD_BLANK(FBINFO_BLANK_PAUSE);
 
-	gbIsCMOS = TRUE;
-	gCMOSType = dbLicense.nCMOS;
-	//gCMOSType = CMOSTYPE_HV7131R;
-	
-//ÏÂÃæÊÇÖ»¶Á¿¨Ä£Ê½	
+        LCD_BLANK(FBINFO_BLANK_PAUSE);
+
+        gbIsCMOS = TRUE;
+        gCMOSType = dbLicense.nCMOS;
+        //gCMOSType = CMOSTYPE_HV7131R;
+
+//ä¸‹é¢æ˜¯åªè¯»å¡æ¨¡å¼
         gbIsCMOS = FALSE;
-#if(USE_FP == 1)	
-	if (SB_FP_OPEN(gCMOSType, NULL, NULL) != FP_ERR_SUCCESS)
-	{
-		uiLcdMessageBox(UI_MSG_ERROR, UISTR_DEVICE_ERROR, UITIME_OUT);
-		//printf("FP Engine Open Error !\n");
-		gbIsCMOS = FALSE;
-	}
-	uiCMOSCheck();
+#if(USE_FP == 1)
+        if (SB_FP_OPEN(gCMOSType, NULL, NULL) != FP_ERR_SUCCESS)
+        {
+                uiLcdMessageBox(UI_MSG_ERROR, UISTR_DEVICE_ERROR, UITIME_OUT);
+                //printf("FP Engine Open Error !\n");
+                gbIsCMOS = FALSE;
+        }
+        uiCMOSCheck();
 #endif
         printf("hiway1\n");
-	LCD_BLANK(FBINFO_BLANK_RESUME);
+        LCD_BLANK(FBINFO_BLANK_RESUME);
         printf("bRet == %d\n",bRet);
-	if (!Db_LoadAllData(bRet))
-	{
-		LCD_BLANK(FBINFO_BLANK_PAUSE);
+        if (!Db_LoadAllData(bRet))
+        {
+                LCD_BLANK(FBINFO_BLANK_PAUSE);
                 printf("hiway2\n");
-		return FALSE;
-	}
-	LCD_BLANK(FBINFO_BLANK_PAUSE);
+                return FALSE;
+        }
+        LCD_BLANK(FBINFO_BLANK_PAUSE);
         printf("hiway3\n");
-	fp_setlivecheck(TRUE);
+        fp_setlivecheck(TRUE);
         printf("hiway4\n");
-	return TRUE;
+        return TRUE;
 }

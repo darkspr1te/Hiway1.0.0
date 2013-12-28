@@ -172,7 +172,7 @@ void InitOther(void)
 		printf("other Device Open Error !\r\n");
 		return ;
 	}
-	//ioctl(g_hOther, IOCTL_LED_ON, 0);    // µãÁÁËü
+	//ioctl(g_hOther, IOCTL_LED_ON, 0);    // ç‚¹äº®å®ƒ
 	//close(g_hOther);
 }
 
@@ -537,7 +537,7 @@ int GetMainTickCount(void)
 	if (__start_time == 0)
 		__start_time = tv.tv_sec;
 
-	return ((tv.tv_sec - __start_time) * 1000 + tv.tv_usec / 1000);//ÃëÊı*1000+Î¢Ãë/1000¾ÍÈ«²¿×ª»»ÎªºÁÃë
+	return ((tv.tv_sec - __start_time) * 1000 + tv.tv_usec / 1000);//ç§’æ•°*1000+å¾®ç§’/1000å°±å…¨éƒ¨è½¬æ¢ä¸ºæ¯«ç§’
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -779,10 +779,10 @@ BYTE GETKEY(BOOL bLong)//BOOL bLong = FALSE
                 //hiway add
                 //the next is test!!!
                 int flags;
-                //ÉèÖÃÎ»ÎŞ×èÈû
+                //è®¾ç½®ä½æ— é˜»å¡
                 flags = fcntl(g_hKeyboard,F_GETFL,0);
                 fcntl(g_hKeyboard,F_SETFL,flags|O_NONBLOCK);
-                read(g_hKeyboard,&KB_DATA,sizeof(struct input_event));//×èÈûµÄ¶ÁÈ¡
+                read(g_hKeyboard,&KB_DATA,sizeof(struct input_event));//é˜»å¡çš„è¯»å–
 
                 fcntl(g_hKeyboard,F_SETFL,flags);
 
@@ -849,7 +849,7 @@ BYTE GETKEY(BOOL bLong)//BOOL bLong = FALSE
 	//while(count--)
 	//{
 		
-		///ÕâÀïÑ­»·¼ì²âpower-key£¬Êµ¼ÊÊÇÄ£ÄâµÄ£¬Îªweb2.0¼ÓÈëĞŞ¸ÄµÄ
+		///è¿™é‡Œå¾ªç¯æ£€æµ‹power-keyï¼Œå®é™…æ˜¯æ¨¡æ‹Ÿçš„ï¼Œä¸ºweb2.0åŠ å…¥ä¿®æ”¹çš„
 		//add by loveywm 2112.11.06
 		//if(POWER_KEY())
 			//return (BYTE)UIKEY_POWER;
@@ -860,7 +860,7 @@ BYTE GETKEY(BOOL bLong)//BOOL bLong = FALSE
 //xprintf("POWER_KEY==%d\r\n",POWER_KEY());
 //xprintf("!POWER_KEY==%d\r\n",!POWER_KEY());
 //xprintf("(BYTE)KEYCODE==%d\r\n",(BYTE)KEYCODE);	
-	//sleep(0.3);  //ÑÓÊ±0.3Ãë
+	//sleep(0.3);  //å»¶æ—¶0.3ç§’
 	return (BYTE)KEYCODE;
 }
 
@@ -2878,4 +2878,5 @@ BOOL SBUM_RESUME()
 	return InitSBUM();
 //	return (ioctl(g_hUSBDevice, IOCTL_POWER_RESUME, 0) == 0);
 }
+
 

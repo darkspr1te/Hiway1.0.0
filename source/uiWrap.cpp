@@ -49,7 +49,7 @@ void uiTimeSetLastActionTime(DWORD dwTime/* = -1UL*/)
 	g_uiProcStatus.bLcdSwitching = FALSE;
 	g_uiProcStatus.bSleeping = FALSE;
 	if (dwTime == -1UL)
-		g_uiTimeLastAction = uiTimeGetTickCount();//Õâ¸öÊ±¼äÊÇ×¢²áÊ±¼ä
+		g_uiTimeLastAction = uiTimeGetTickCount();//è¿™ä¸ªæ—¶é—´æ˜¯æ³¨å†Œæ—¶é—´
 	else
 		g_uiTimeLastAction = dwTime;
 }
@@ -1065,8 +1065,8 @@ BOOL uiCMOSCaptureFP(void)
 	if (bRet)
 	{
 		xprintf("the send is press_fp\r\n");
-		uiEventSend_PRESS_FP();//·¢ËÍÊı¾İ
-		uiTimeSetLastActionTime();//ÉèÖÃÊ±¼ä
+		uiEventSend_PRESS_FP();//å‘é€æ•°æ®
+		uiTimeSetLastActionTime();//è®¾ç½®æ—¶é—´
 	}
 	
 	PERF_CHECK((g_dwPerfCaptureTime = GetTickCount(TICKCOUNT_STOP)));
@@ -1525,7 +1525,7 @@ void uiLogSlogAdd(UINT64 nManagerID, BYTE byAction, UINT64 nUserID, BYTE byResul
 		}
 	}
 	DbSLogGet(&mLog, DbSLogGetReadPos(), 1);  
-	//uiEventSend_SLOG(&mLog);//ÕâÀïÒ²ÓĞ·¢ËÍ
+	//uiEventSend_SLOG(&mLog);//è¿™é‡Œä¹Ÿæœ‰å‘é€
 }
 
 /************************************************************************/
@@ -1600,18 +1600,18 @@ void uiLogGlogAdd(UINT64 nID, BYTE byAction, BYTE byTrStatus, BOOL bAntipassOut)
 		}
 	}
 	
-	//Ô­ÏÈÊÇ´æÔÚµÄ
+	//åŸå…ˆæ˜¯å­˜åœ¨çš„
 	//DbGLogGet(&gLog, DbGLogGetReadPos(), 1); 
 	DM9000_Check();
-	//È·ÈÏtcp/ipÁ¬ÉÏ²¢ÇÒ·şÎñ¶ËÓĞ»ØÓ¦²Å·¢ËÍ
+	//ç¡®è®¤tcp/ipè¿ä¸Šå¹¶ä¸”æœåŠ¡ç«¯æœ‰å›åº”æ‰å‘é€
 	if(http_WEB_CONNECT == TRUE && tcpclient_connect_isok()==1)
 	{
-		//Ê×ÏÈÅĞ¶Ï»úÆ÷ÖĞÊÇ·ñÓĞ¶ÏÍøÊ±±£´æµÄÃ»ÓĞÉÏ´«µÄ
-		//È»ºóÔÙ¾ö¶¨ÊÇ·ñÉÏ´«
+		//é¦–å…ˆåˆ¤æ–­æœºå™¨ä¸­æ˜¯å¦æœ‰æ–­ç½‘æ—¶ä¿å­˜çš„æ²¡æœ‰ä¸Šä¼ çš„
+		//ç„¶åå†å†³å®šæ˜¯å¦ä¸Šä¼ 
 	   xprintf("DbGLogCount()==%d\r\n",DbGLogCount());	
 	   if((DbGLogCount() - 1) == 0)
 	   {
-		if(web2_send_glog(&gLog))//·¢ËÍ³É¹¦ºóÔÚ°ÑÊı¾İ¼ÓÈë
+		if(web2_send_glog(&gLog))//å‘é€æˆåŠŸååœ¨æŠŠæ•°æ®åŠ å…¥
 		{
 			
 			//web2_recv_data(1000);//add by loveywm 2013.02.21
@@ -1625,7 +1625,7 @@ void uiLogGlogAdd(UINT64 nID, BYTE byAction, BYTE byTrStatus, BOOL bAntipassOut)
 	   }
 	}	
 
-	//uiEventSend_GLOG(&gLog);//×¢ÒâÕâÀï
+	//uiEventSend_GLOG(&gLog);//æ³¨æ„è¿™é‡Œ
 	
 }
 
@@ -2975,8 +2975,8 @@ BOOL uiEventSend_SLOG(MLOG_INFO *pLogData)
 //
 void uiEventSend_PRESS_FP(void)
 {
-	//·¢ËÍµÄÊÇ02 00 00 00
-	//comm_send_event(EVENT_PRESS_FP, NULL, 0);//×¢ÒâÕâ¸ö·¢ËÍ
+	//å‘é€çš„æ˜¯02 00 00 00
+	//comm_send_event(EVENT_PRESS_FP, NULL, 0);//æ³¨æ„è¿™ä¸ªå‘é€
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -3046,3 +3046,4 @@ void uiEventSend_ALARM_OFF(int nAlarmType, int nAlarmReleaseType, UINT64 ID)
 	data[2] = (DWORD)ID;
 	//comm_send_event(EVENT_ALARM_OFF, data, sizeof(data));
 }
+

@@ -561,7 +561,7 @@ enum
 	UISTR_BK_2,
 	UISTR_BK_3,
 	UISTR_BK_4,
-    UISTR_BK_5,
+        UISTR_BK_5,
 	UISTR_BK_6, UISTR_BK_END = UISTR_BK_6,
 
 //	UISTR_FUNC_START, UISTR_FUNC_DUTYON = UISTR_FUNC_START,	//must be correspod to Database.h/T_TR_STATUS  //xf 090818
@@ -912,11 +912,11 @@ enum
 	UISTR_UNIT_USED,
 	UISTR_ALARM_REMOVE_CONFIRM,
 	
-	UISTR_PRESS_VERIFY_GET_DATA, 		 //����#�����ӷ�������ȡָ��ģ�嵽����
-	UISTR_VERIFY_GET_DATA_SUCCESS,		   //��ȡ�ɹ�
-	UISTR_VERIFY_GET_DATA_FAIL,			//��ȡʧ��
-	UISTR_ENROLL_GET_NAME_FAIL,			//��ȡ����ʧ�ܣ�ϵͳ�޴˺��룬����������ע��
-	UISTR_ENROLL_FAIL,                    //ע��ʧ��
+	UISTR_PRESS_VERIFY_GET_DATA, 		 //按“#”键从服务器获取指纹模板到本地
+	UISTR_VERIFY_GET_DATA_SUCCESS,		   //获取成功
+	UISTR_VERIFY_GET_DATA_FAIL,			//获取失败
+	UISTR_ENROLL_GET_NAME_FAIL,			//获取姓名失败；系统无此号码，不允许继续注册
+	UISTR_ENROLL_FAIL,                    //注册失败
     UISTR_ENROLL_DATA_SAVE_TIME,
     UISTR_SERVER_NO_ENROLL_ID,
 
@@ -945,4 +945,5 @@ void FONTDATABASE_INIT();
 QString UISTR(int nIndex);
 
 #endif /*__UI_FONT_H__*/
+
 

@@ -213,7 +213,7 @@ public:
 	DWORD  DoPwdInputProcess(int key);
 	DWORD  DoPwdInputProcess();
 	void   SetPasswordLength(int nlength);
-	//Ôö¼ÓµÄ
+	//å¢žåŠ çš„
 	DWORD DoUserIdInputProcess(int key);
 	DWORD DoDeptIdInputProcess();
 	DWORD DoPIdInputProcess();
@@ -547,3 +547,4 @@ private:
 
 
 #endif /*__USER_MANAGE_H__*/
+

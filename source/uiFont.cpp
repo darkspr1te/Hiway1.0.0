@@ -1841,15 +1841,15 @@ void FONTDATABASE_INIT()
 	__STRINGTABLE->append(uistr_UNIT_USED);
 	__STRINGTABLE->append(uistr_ALARM_REMOVE_CONFIRM);
 	
-	__STRINGTABLE->append(uistr_PRESS_VERIFY_GET_DATA);          //°´¡°#¡±¼ü´Ó·þÎñÆ÷»ñÈ¡Ö¸ÎÆÄ£°åµ½±¾µØ
-	__STRINGTABLE->append(uistr_VERIFY_GET_DATA_SUCCESS);          //»ñÈ¡³É¹¦
-	__STRINGTABLE->append(uistr_VERIFY_GET_DATA_FAIL);          //»ñÈ¡Ê§°Ü
-	__STRINGTABLE->append(uistr_ENROLL_GET_NAME_FAIL);          //»ñÈ¡ÐÕÃûÊ§°Ü£»ÏµÍ³ÎÞ´ËºÅÂë£¬²»ÔÊÐí¼ÌÐø×¢²á
-    __STRINGTABLE->append(uistr_ENROLL_FAIL);                    //×¢²áÊ§°Ü
-    __STRINGTABLE->append(uistr_ENROLL_DATA_SAVE_TIME);                    //ÍøÂç»ñÈ¡µÄÊý¾Ý±£³ÖÊ±¼ä
-    __STRINGTABLE->append(uistr_SERVER_NO_ENROLL_ID);       //·þÎñÆ÷ÎÞ´ËID
+	__STRINGTABLE->append(uistr_PRESS_VERIFY_GET_DATA);          //æŒ‰â€œ#â€é”®ä»ŽæœåŠ¡å™¨èŽ·å–æŒ‡çº¹æ¨¡æ¿åˆ°æœ¬åœ°
+	__STRINGTABLE->append(uistr_VERIFY_GET_DATA_SUCCESS);          //èŽ·å–æˆåŠŸ
+	__STRINGTABLE->append(uistr_VERIFY_GET_DATA_FAIL);          //èŽ·å–å¤±è´¥
+	__STRINGTABLE->append(uistr_ENROLL_GET_NAME_FAIL);          //èŽ·å–å§“åå¤±è´¥ï¼›ç³»ç»Ÿæ— æ­¤å·ç ï¼Œä¸å…è®¸ç»§ç»­æ³¨å†Œ
+    __STRINGTABLE->append(uistr_ENROLL_FAIL);                    //æ³¨å†Œå¤±è´¥
+    __STRINGTABLE->append(uistr_ENROLL_DATA_SAVE_TIME);                    //ç½‘ç»œèŽ·å–çš„æ•°æ®ä¿æŒæ—¶é—´
+    __STRINGTABLE->append(uistr_SERVER_NO_ENROLL_ID);       //æœåŠ¡å™¨æ— æ­¤ID
 
-    __STRINGTABLE->append(uistr_SERVER_NO_ENROLL_FP);       //·þÎñÆ÷ÎÞ´ËID
+    __STRINGTABLE->append(uistr_SERVER_NO_ENROLL_FP);       //æœåŠ¡å™¨æ— æ­¤ID
 	
     __STRINGTABLE->append(uistr_MENU_TCIPIP_MODE);
     __STRINGTABLE->append(uistr_MENU_DBUGLOGDOWNLOAD);	
@@ -1882,3 +1882,4 @@ QString UISTR(int nIndex)
 
 	return __STRINGTABLE->at(nIndex);
 };
+
