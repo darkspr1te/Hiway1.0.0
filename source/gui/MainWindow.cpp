@@ -20,7 +20,7 @@ extern void comm_sendtime (void);
 extern BOOL   LINK_LOST;
 
 /************************************************************************/
-/*                                                                      */
+/*The init of ui proc status                                                                      */
 /************************************************************************/
 T_UI_PROCSTATUS g_uiProcStatus =
 {
@@ -694,32 +694,25 @@ void uiProcTimerManage()
 		{
 			g_uiProcStatus.bReqManager = FALSE;
 			g_uiProcStatus.bMenuRequested = FALSE;
-		//	bRedrawStatusbar = TRUE;
+                        //bRedrawStatusbar = TRUE;
 		}
 	}
 
-// 	if (g_uiProcStatus.nPrevLanguage != dbSetupTotal.setSystem.nLanguage)
-// 	{
-// 		g_uiProcStatus.nPrevLanguage = dbSetupTotal.setSystem.nLanguage;
-// 		bRedrawStatusbar = TRUE;
-// 	}
-
 	if (g_uiProcStatus.bManagerVerifyOK)
 	{
-		g_uiProcStatus.bManagerVerifyOK = FALSE;
+                printf("g_uiProcStatus.bManagerVerifyOK==%d\r\n",g_uiProcStatus.bManagerVerifyOK);
+                g_uiProcStatus.bManagerVerifyOK = FALSE;
 		if (g_uiProcStatus.bMenuRequested)
 		{
 			g_uiProcStatus.bMenuRequested = FALSE;
 			g_uiProcStatus.bMenuProcessing = TRUE;
-			uiSoundOut(SOUND_ENTERMENU, UI_BUZZER_OK);
+                        //uiSoundOut(SOUND_ENTERMENU, UI_BUZZER_OK);
 			CMenu m(g_MainWindow);
 			m.show();
 			m.MenuProc();
-// 			if (!g_uiProcStatus.bLcdSwitching && !g_uiProcStatus.bSleeping)
-// 				uiTimeSetLastActionTime();
 			g_uiProcStatus.bReqManager = FALSE;
 			g_uiProcStatus.bMenuProcessing = FALSE;
-				g_MainWindow->DrawClock(TRUE);
+                        g_MainWindow->DrawClock(TRUE);
 		}
 		else
 		{
@@ -1071,15 +1064,14 @@ xprintf("nKey==%d\r\n",nKey);
 }
 int nMenuDelay=0;//为保护而设置
 void uiProcKeyboardManager(int nKey)
-{
-
-//xprintf("nkey1==%d\r\n",nKey);	
+{	
 	if (nKey == UIKEY_NONE)
 		nKey = uiKeyGetKey();  
 	if (nKey == UIKEY_NONE)
-		return;
-//xprintf("nkey2==%d\r\n",nKey);
-	uiProcScreensaver();
+                return;
+
+        //hiway del
+        uiProcScreensaver();
 /*
         if (nKey == UIKEY_1)
         {
@@ -1175,19 +1167,21 @@ void uiProcKeyboardManager(int nKey)
 		nMenuDelay = 0;
 	}
 */
-        if (nKey >= UIKEY_3&& nKey <= UIKEY_9)
+        if (nKey >= UIKEY_3 && nKey <= UIKEY_9)
 	{
-		g_VerifyWindow->VerifyLoop(nKey);
+                //g_VerifyWindow->VerifyLoop(nKey);
 		return;
 	}
 	
 	if (!g_bDisableDevice && (nKey == UIKEY_MENU))
 	{
-		g_uiProcStatus.bReqManager = TRUE;
+                printf("g_bDisableDevice==%d\r\n",g_bDisableDevice);
+                printf("nKey == UIKEY_MENU");
+                g_uiProcStatus.bReqManager = TRUE;
 		g_uiProcStatus.bMenuRequested = TRUE;
 		g_uiProcStatus.dwReqManagerTime = uiTimeGetTickCount();
 		//if ((g_uiProcStatus.bReqManager && !Db_GetManagerCountTotal())&&( dbSetupTotal.setSystem.dwSManagerPwd == STRING2PWD("0") ))
-	         if (g_uiProcStatus.bReqManager && !Db_GetManagerCountTotal())
+                if (g_uiProcStatus.bReqManager && !Db_GetManagerCountTotal())
 		{	
 				g_uiProcStatus.bReqManager = FALSE;
 				g_uiProcStatus.bManagerVerifyOK = TRUE;
@@ -1198,15 +1192,14 @@ void uiProcKeyboardManager(int nKey)
 		{
 			uiProcDrawStatus();
 		}	
-		//SETUP_TIMER(TIMER_MANAGERREQUEST, 8000, 0, NULL);
 	}
-    	else if (!g_bDisableDevice && nKey == UIKEY_POWER)
+ /*   	else if (!g_bDisableDevice && nKey == UIKEY_POWER)
 	{
 		bDisplayCOM = TRUE;
 		xprintf("bDisplayCOM==%d\r\n",bDisplayCOM);
 		uiProcDrawStatus(); 
 		xprintf("loveywm\r\n");
-	} 
+        } */
 	//////debug shengchengziku 
 	/*  else if (!g_bDisableDevice && nKey == UIKEY_POWER)
 	{
@@ -1215,40 +1208,34 @@ void uiProcKeyboardManager(int nKey)
 	 ////debug
 	else if (!g_bDisableDevice && (nKey == UIKEY_OK))
 	{
-		DIALOGBOXEX(CSearchLog, CSearchLog::LOG_GLOG_BY_USER);
-		uiProcKeyboardManager(UIKEY_ESC);
+                //DIALOGBOXEX(CSearchLog, CSearchLog::LOG_GLOG_BY_USER);
+                //uiProcKeyboardManager(UIKEY_ESC);
 	}
 	else if (!g_bDisableDevice && nKey == UIKEY_ESC && g_uiProcStatus.bReqManager)
 	{
-//		STOP_TIMER(TIMER_MANAGERREQUEST);
-		g_uiProcStatus.bReqManager = FALSE;
-		g_uiProcStatus.bMenuRequested = FALSE;
-		g_StatusWindow ->clear();
+
+                //g_uiProcStatus.bReqManager = FALSE;
+                //g_uiProcStatus.bMenuRequested = FALSE;
+                //g_StatusWindow ->clear();
 
 	}
 	else if(!g_bDisableDevice && nKey ==UIKEY_ESC)
 	{
-		g_StatusWindow ->clear();
-        		g_uiProcStatus.nTrType = TR_DUTYNO;
-		uiProcDrawStatus();
+                //g_StatusWindow ->clear();
+                        //g_uiProcStatus.nTrType = TR_DUTYNO;
+                //uiProcDrawStatus();
 	}
 	else if (!g_bDisableDevice && nKey == UIKEY_UP)
-	{
-		/*g_uiProcStatus.nTrType--;
-		if (g_uiProcStatus.nTrType < TR_START)
-			g_uiProcStatus.nTrType = TR_END;*/	
-		g_uiProcStatus.nTrType = TR_DUTYON;
-		uiProcDrawStatus();
+        {
+                //g_uiProcStatus.nTrType = TR_DUTYON;
+                //uiProcDrawStatus();
 	}
 	else if (!g_bDisableDevice && nKey == UIKEY_DOWN)
 	{
-		/*g_uiProcStatus.nTrType++;
-		if (g_uiProcStatus.nTrType > TR_END)
-			g_uiProcStatus.nTrType = TR_START;*/
-		g_uiProcStatus.nTrType = TR_DUTYOFF;
-		uiProcDrawStatus();
+                //g_uiProcStatus.nTrType = TR_DUTYOFF;
+                //uiProcDrawStatus();
 	}
-	else if (!g_bDisableDevice && nKey == UIKEY_1 && dbLicense.bUseACFunction && dbSetupTotal.setSystem.bSOSKeyUse)
+/*	else if (!g_bDisableDevice && nKey == UIKEY_1 && dbLicense.bUseACFunction && dbSetupTotal.setSystem.bSOSKeyUse)
 	{
 		if (uiKeyGetKeyLong(3000) == UIKEY_1)
 		{
@@ -1260,7 +1247,7 @@ void uiProcKeyboardManager(int nKey)
 			g_uiProcStatus.bSOSKeyPressed = TRUE;
 			SETUP_TIMER(TIMER_SOSKEY_RELEASE, 3000, 0, NULL);
 		}
-	}
+        }*/
 }
 
 void uiProcLockManager()
@@ -1396,27 +1383,28 @@ void uiProcMain(BOOL bFirst)
 
 	if (bFirst)
 	{
-		g_VerifyWindow = new CVerify;
+         /*       g_VerifyWindow = new CVerify;
 		if (!g_VerifyWindow)
 		{
 			printf("Verify window creating error, %s !\n", strerror(errno));
 			while (!g_VerifyWindow)
 				g_VerifyWindow = new CVerify;
-		}
+                }
+        */
+                //uiLogSlogAdd(0, SLOG_TURNON, 0, 0);//这是第一个记录发送
+                //uiSoundOut(SOUND_TURNON, UI_BUZZER_OK);
 
-		uiLogSlogAdd(0, SLOG_TURNON, 0, 0);//这是第一个记录发送
-//		uiSoundOut(SOUND_TURNON, UI_BUZZER_OK);
 	}
 	else
 	{
 		//g_MainWindow->ui.lblstatCamera->setEnabled(g_uiProcStatus.bCameraStatus);
-		/*g_MainWindow->ui.lblstatCard->setEnabled(g_uiProcStatus.bSDCardStatus);*/
+                //g_MainWindow->ui.lblstatCard->setEnabled(g_uiProcStatus.bSDCardStatus);
 		//g_MainWindow->ui.lblStatNetwork->setEnabled(g_uiProcStatus.bNetworkStatus);
-	/*	g_MainWindow->ui.lblstatUSB->setEnabled(g_uiProcStatus.bUSBStatus);*/
-	/*	if (g_uiProcStatus.bUSBStatus)
-			g_MainWindow->ui.lblstatUSB->show();
-		else
-			g_MainWindow->ui.lblstatUSB->hide();*/
+                //g_MainWindow->ui.lblstatUSB->setEnabled(g_uiProcStatus.bUSBStatus);
+                //if (g_uiProcStatus.bUSBStatus)
+                        //g_MainWindow->ui.lblstatUSB->show();
+                //else
+                        //g_MainWindow->ui.lblstatUSB->hide();
 	}
 
 	uiProcDrawLicenseStatus(); 
@@ -1455,13 +1443,13 @@ void uiProcMain(BOOL bFirst)
 */
 	while (1)
 	{
-        		#if 1
+                        #if 0
 		 	//OtherDev_Test();
 		 	DM9000_Check();
 			DispDeviceState();		
         		#endif	 
 		//判断用户时间是否过期
-		DbUserTimeOut(dbSetupTotal.setSystem.dwDataSaveTime*86400);
+                //DbUserTimeOut(dbSetupTotal.setSystem.dwDataSaveTime*86400);
 
 	   	//uiLcdSetLabelText(g_StatusWindow, QString(UISTR(UISTR_PRESS_VERIFY_GET_DATA)), QColor(255, 255, 214), QColor(255, 255, 255));
 		//时间管理
@@ -1475,7 +1463,7 @@ void uiProcMain(BOOL bFirst)
 		//检测指纹按下
                 //UIPROC_WRAPPER(g_VerifyWindow->VerifyLoop());
 		//get_cmd();		
-                UIPROC_WRAPPER(uiProcLockManager());
+                //UIPROC_WRAPPER(uiProcLockManager());
                 UIPROC_WRAPPER(uiProcScreensaver());
 
 		if (g_uiProcStatus.nPrevLanguage != dbSetupTotal.setSystem.nLanguage ||
@@ -1487,6 +1475,7 @@ void uiProcMain(BOOL bFirst)
 			LCD_BLANK(FBINFO_BLANK_PAUSE);
 			break;
 		}
+
 	}
 
 	g_MainWindow = NULL;
@@ -1654,10 +1643,10 @@ void CMainWindow::DrawClock(BOOL bForce  /*= FALSE*/)
 		DWORD dwSeconds;
 		dwSeconds = uiRtcGetSeconds();
 	//	uiRtcGetDate(dwSeconds);
-		uiLcdSetLabelText(ui.lblMonth, uiRtcGetDate(dwSeconds), QColor(255, 255, 200), QColor(255, 255, 255));
+                uiLcdSetLabelText(ui.lblMonth, uiRtcGetDate(dwSeconds), QColor(255, 255, 255), QColor(255, 255, 255));
 
 		sprintf(szBuf, "%02d:%02d", nHour, nMinute);
-		uiLcdSetLabelText(ui.lblTime, szBuf, QColor(255, 255, 0), QColor(255, 255, 255));
+                uiLcdSetLabelText(ui.lblTime, szBuf, QColor(255, 255, 255/*0*/), QColor(255, 255, 255));
 		uiLcdSetLabelText(ui.lblWeekday, UISTR(__weekday_list[nWeekday - 1]), QColor(255, 255, 214), QColor(255, 255, 255));
 	}
 }

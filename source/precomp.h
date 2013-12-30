@@ -2,22 +2,26 @@
 #define __PRECOMP_H__
 #include <QtCore/QTextCodec>
 
+
+//此文件是全局头文件，定义在_global.cpp中定义
+
+
 //////////////////////////////////////////////////////////////////////////
-typedef int						HFILE;
+typedef int			HFILE;
 
-typedef char					CHAR;
-typedef short					SHORT;
-typedef int						INT;
+typedef char			CHAR;
+typedef short			SHORT;
+typedef int			INT;
 
-typedef unsigned char			BYTE, u8, uchar;
-typedef unsigned char			BOOL;
-typedef unsigned short			WORD, UINT16,u16;
-typedef unsigned int			DWORD, UINT32, u32;
-typedef long					LONG;
-typedef unsigned long long		UINT64, u64;
+typedef unsigned char		BYTE,u8,uchar,u8_t;
+typedef unsigned char		BOOL;
+typedef unsigned short		WORD,UINT16,u16,u16_t;
+typedef unsigned int		DWORD,UINT32,u32,u32_t;
+typedef long			LONG;
+typedef unsigned long long	UINT64,u64,u64_t;
 
-typedef unsigned short			WPARAM;
-typedef unsigned long			LPARAM;
+typedef unsigned short		WPARAM;
+typedef unsigned long		LPARAM;
 
 typedef enum
 {
@@ -58,7 +62,7 @@ typedef enum
 #define UI_IP_MAKE(a,b,c,d) (((a)<<24) | ((b)<<16) | ((c)<<8) | (d))
 #define UI_IP_UNMAKE(ip, a,b,c,d) { (a)=((ip)>>24)&0xFF; (b)=((ip)>>16)&0xFF; (c)=((ip)>>8)&0xFF; (d)=(ip)&0xFF; }
 
-#define POST_EVENTS()			{QApplication::processEvents(); ioctl(g_hTftLcd, FBIOBLANK, FBINFO_ROTATE);}
+#define POST_EVENTS()			{QApplication::processEvents(); /*ioctl(g_hTftLcd, FBIOBLANK, FBINFO_ROTATE);*/}
 #define ITEM_CNT(_x_)			(sizeof((_x_)) / sizeof((_x_)[0]))
 #define WAIT_EVENT(_e_)			{while((_e_)) { POST_EVENTS(); }}
 
@@ -157,7 +161,6 @@ typedef enum
 #include "uiLcd.h"
 #include "Database.h"
 #include "uiWrap.h"
-// #include "uiProcs.h"
 #include "COM.h"
 #include "Wiegand.h"
 #include "Lock.h"
@@ -324,12 +327,12 @@ extern char*			g_clockImageFilename;
 
 extern st_FpUploadData*		gpFpUploadData;
 #define  PrintfDbugEn   	0
-#define PRODUCT_AB 	0
+#define PRODUCT_AB              0
 
 #define USE_FP 		0    	//是否使用指纹验证/记得改main,cpp下面的一个参数gbIsCMOS = FALSE;
 #define USE_CARD		0	//是否使用打卡验证
-#define AE_375X		1	//使用375的特性，一些是372所不用的	
-#define AE_372X              0      //使用372的特性，一些是375所不用的
+#define AE_375X		0	//使用375的特性，一些是372所不用的
+#define AE_372X              1      //使用372的特性，一些是375所不用的
 
 
 extern void xprintf (

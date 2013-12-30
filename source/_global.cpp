@@ -23,8 +23,8 @@ void*		g_hFpLibrary = NULL;															//4
 T_VIDEOIN	g_VideoIn;																		//4
 
 //Various Status Parameters
-int			g_nSignal = -1;																	//4
-int			gCMOSType;																		//4
+int		g_nSignal = -1;																	//4
+int		gCMOSType;																		//4
 BOOL		gbIsCMOS;																		//1
 BOOL		g_bProgress = FALSE;															//1	
 BOOL		g_bHostCommandCheckEnable = FALSE;												//1
@@ -32,7 +32,7 @@ BOOL		g_bCmosCaptureEnable = FALSE;													//1
 BOOL		g_bCardCaptureEnable = FALSE;													//1
 BYTE		g_bDisableDevice = DISABLE_MODE_NONE;											//1
 BOOL		g_bDeviceBusy = FALSE;															//1
-T_CTRL_ITEM* g_CtrlList = NULL;																//4
+T_CTRL_ITEM*    g_CtrlList = NULL;																//4
 BOOL		g_bPoweroffFlag = TRUE;															//1
 
 DWORD		g_uiTimeLastAction = 0;															//4
@@ -43,17 +43,17 @@ BOOL		g_uiLicenseChanged = FALSE;														//1
 BOOL		g_uiPowerOffFlag = FALSE;														//1
 BOOL		g_uiClearForLogWrn = FALSE;														//1
 BOOL		g_uiViewSecond = FALSE;															//1
-int			g_uiHelpStr = -1;																//4
-struct termios g_ttyConsoleStatus[2];														//
+int		g_uiHelpStr = -1;																//4
+struct termios  g_ttyConsoleStatus[2];														//
 
 //
-BYTE gFpData[1404];																			//1404
-USER_INFO gUserInfoTemp;																	//56
+BYTE            gFpData[1404];																			//1404
+USER_INFO       gUserInfoTemp;																	//56
 
-DBLICENSE dbLicense;																		//140
-DBSETUP_TOTAL dbSetupTotal;																	//3332
-DBSETUP_TOTAL dbSetupTotalTemp;																//3332
-DBSETUP_SYSTEM dbSetupSystemNew;															//156
+DBLICENSE       dbLicense;																		//140
+DBSETUP_TOTAL   dbSetupTotal;																	//3332
+DBSETUP_TOTAL   dbSetupTotalTemp;																//3332
+DBSETUP_SYSTEM  dbSetupSystemNew;															//156
 DBSETUP_TIMEZONE dbSetupTimezoneNew;														//3108
 T_PARAMETER_INFO g_params;																	//64
 BYTE			gpSplash[65536];															//65536
@@ -89,7 +89,7 @@ DWORD			g_dwVerifyCountFP;															//4
 DWORD			g_dwVerifyCountCD;															//4
 DWORD			g_dwVerifyCountPW;															//4
 
-int				g_nCurrentTheme;															//4
+int			g_nCurrentTheme;															//4
 QRgb			g_rgbForeColor;																//4
 QRgb			g_rgbForeColor1;															//4
 QRgb			g_rgbBackgroundColor;														//4

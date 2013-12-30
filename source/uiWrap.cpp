@@ -677,7 +677,7 @@ static const int* __KEYMAP_BK[] =
 
 int uiKeyGetKey(int bPostKeyEvent)     
 {
-//xprintf("ywm1\r\n");
+
 	int nKey = (int)GETKEY();
         switch(nKey)
         {
@@ -698,7 +698,7 @@ int uiKeyGetKey(int bPostKeyEvent)
             qDebug() << "keycode==down"<<15;
             //OnKeyPressArrow(nKey,nPopupMenuTitle);
             break;
-        case UIKEY_1://UIKEY_ESC
+        case UIKEY_ESC://UIKEY_ESC
             qDebug() << "keycode==esc"<<1;
             //goto _Exit;
             break;
@@ -708,36 +708,20 @@ int uiKeyGetKey(int bPostKeyEvent)
         default:
             break;
         }
-//xprintf("ywm2\r\n");	
+
 	if (nKey != UIKEY_NONE)
 	{
-//xprintf("ywm3\r\n");
-		if (g_MainWindow)
-			uiLedKeyBackground(TRUE);
-		SETUP_TIMER(TIMER_KEYPAD_BACKGROUND, 15000, 0, NULL);
-		uiTimeSetLastActionTime();
+                //if (g_MainWindow)
+                        //uiLedKeyBackground(TRUE);
+                //SETUP_TIMER(TIMER_KEYPAD_BACKGROUND, 15000, 0, NULL);
+                uiTimeSetLastActionTime();
 
-		if (dbSetupTotal.setSystem.bKeyTones)
-			uiBuzzerKey();
-
-// 		if (g_KeyboardList)
-// 			nKey = g_KeyboardList[nKey];
-// 		if (nKey == UIKEY_F1)
-// 		{
-// 			int nHelpStr;
-// 			QWidget* pFocusWidget = QApplication::focusWidget();
-// 
-// 			nHelpStr = uiHelpFind(pFocusWidget);
-// 			if (pFocusWidget && nHelpStr >= 0)
-// 			{
-// 				DIALOGBOXEX(CHelpWindow, nHelpStr);
-// 				pFocusWidget->setFocus(Qt::MouseFocusReason);
-// 			}
-// 		}
+                //hiway del
+                //if(dbSetupTotal.setSystem.bKeyTones)
+                        //uiBuzzerKey();
 		if (bPostKeyEvent)                
 		    PostKeyEvent(nKey, NULL, bPostKeyEvent);   
-	}
-//xprintf("ywm4\r\n");	
+	}	
 	return nKey;
 }
 

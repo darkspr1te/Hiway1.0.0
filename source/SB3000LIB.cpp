@@ -180,7 +180,7 @@ void InitOther(void)
 //////////////////////////////////////////////////////////////////////////
 static BOOL InitRtcClock(void)
 {
-	g_hRtcClock = open(DEVNAME_RTCCLOCK, O_RDWR);
+        g_hRtcClock = open(DEVNAME_RTCCLOCK, O_RDWR);
 	if (g_hRtcClock == -1)
 	{
 		printf("RTC Device Open Error !\r\n");
@@ -769,11 +769,12 @@ BYTE GETKEY(BOOL bLong)//BOOL bLong = FALSE
 {
 	if (g_hKeyboard == INVALID_HANDLE_VALUE)
 		return UIKEY_NONE;
-//xprintf("key1\r\n");
+
 	int KEYCODE = bLong ? -1 : UIKEY_NONE;
 	if(uiTimeGetTickCount() - g_dwReadKeyTime > 300)
 	{
-       		g_dwReadKeyTime=uiTimeGetTickCount();
+                //hiway del
+                //g_dwReadKeyTime=uiTimeGetTickCount();
                 //read(g_hKeyboard, &KEYCODE, sizeof(KEYCODE));
 
                 //hiway add
@@ -825,7 +826,7 @@ BYTE GETKEY(BOOL bLong)//BOOL bLong = FALSE
                     {
                         if(KB_DATA.value == 1 /*|| KB_DATA.value == 2*/)
                         {
-                            KEYCODE = UIKEY_1;
+                            KEYCODE = UIKEY_ESC;
                             return KEYCODE;
                         }
                     }
@@ -854,12 +855,7 @@ BYTE GETKEY(BOOL bLong)//BOOL bLong = FALSE
 		//if(POWER_KEY())
 			//return (BYTE)UIKEY_POWER;
 		///
-	//}
-
-	
-//xprintf("POWER_KEY==%d\r\n",POWER_KEY());
-//xprintf("!POWER_KEY==%d\r\n",!POWER_KEY());
-//xprintf("(BYTE)KEYCODE==%d\r\n",(BYTE)KEYCODE);	
+	//}	
 	//sleep(0.3);  //延时0.3秒
 	return (BYTE)KEYCODE;
 }

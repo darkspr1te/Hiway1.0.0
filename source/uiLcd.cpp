@@ -254,7 +254,8 @@ void uiLcdSetLabelText(QLabel *pLabel, QString str, QColor color,QColor edge_col
 	painter.drawText(x, y, w, h, align, str);
 	if(strName.length())
 	{
-		painter.setFont(SB_FONT_4());
+                //painter.setFont(SB_FONT_4());
+                painter.setFont(SB_FONT_4());
 		painter.drawText(x+painter.fontMetrics().width(str)+10,y,w,h,align,strName);
 	}
 	pLabel->setPixmap(pmap);

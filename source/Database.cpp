@@ -560,7 +560,7 @@ BOOL DbLicenseRead(void)
 #if AE_372X		
 		//为了修改显示为2000而改动，真实是5000，复位时设置的
 		//dbLicense.nMaxEnrollCount = gFpMaximum;
-		int gFpMaximum_back = 2000;
+                int gFpMaximum_back = 2000;
 		memcpy(&gFpMaximum,&gFpMaximum_back,4);
 		dbLicense.nMaxEnrollCount = 2000;
 #endif		
@@ -2059,21 +2059,24 @@ BOOL DbUserInfoLoad(void)
 {
 	int fd;
 	BOOL bRet = TRUE;
-
+        printf("bRet111: %d\r\n", bRet);
 	fd = open(FLASH_USERINFO_FILENAME, O_RDWR | O_CREAT);
 	if (fd == INVALID_HANDLE_VALUE)
-		return FALSE;
-
+        {
+            printf("bRet222: %d\r\n", bRet);
+            return FALSE;
+        }
 	gpUserInfoEnrollData = (USER_INFO*)malloc(sizeof(USER_INFO) * dbLicense.nMaxEnrollCount);
 	if (gpUserInfoEnrollData == NULL)
 	{
 		bRet = FALSE;
+                printf("bRet333: %d\r\n", bRet);
 		goto _lExit;
 	}
-
+        printf("bRet555: %d\r\n", bRet);
 	memset(gpUserInfoEnrollData, 0, sizeof(USER_INFO) * dbLicense.nMaxEnrollCount);
 	bRet = _Db_FlashRead(fd, gpUserInfoEnrollData, 0, dbLicense.nMaxEnrollCount, sizeof(USER_INFO), 0, NULL);
-
+        printf("bRet444: %d\r\n", bRet);
 _lExit:
 	FD_CLOSE(fd);
 	return bRet;
@@ -4418,11 +4421,11 @@ BOOL Db_LoadAllData(BOOL bSetupReadStatus)
         //__flashread_type = FLASHREAD_FP;
         //bRet2 = DbFpLoad();		bRet = bRet && bRet2; /*printf("FPLoad: %d\r\n", bRet2);*/
 
-        //__flashread_type = FLASHREAD_USERINFO;
-        //bRet2 = DbUserInfoLoad(); bRet=bRet && bRet2; printf("UserInfoLoad: %d\r\n", bRet2);
+        __flashread_type = FLASHREAD_USERINFO;
+        bRet2 = DbUserInfoLoad(); bRet=bRet && bRet2; printf("UserInfoLoad: %d\r\n", bRet2);
 
-        //__flashread_type = FLASHREAD_USERINFO;
-        //bRet2 = DbUserTimeLoad(); bRet=bRet && bRet2; printf("UserInfoLoad: %d\r\n", bRet2);
+        __flashread_type = FLASHREAD_USERINFO;
+        bRet2 = DbUserTimeLoad(); bRet=bRet && bRet2; printf("UserInfoLoad: %d\r\n", bRet2);
 
 	__flashread_type = FLASHREAD_USERINFO;
         //bRet2 = DbFpUploadDataLoad(); bRet=bRet && bRet2; printf("UserInfoLoad: %d\r\n", bRet2);

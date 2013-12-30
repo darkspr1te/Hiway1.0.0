@@ -3391,8 +3391,10 @@ _lStart:
 	while (!m_bTerminateFlag && uiTimeIsTimeout() == FALSE)
 	{
 		POST_EVENTS();
-		DM9000_Check();
 
+                //DM9000_Check();
+                //del hiway
+                /*
 		uiLockProc();
 		if (uiPcCmdProc(FALSE))
 		{
@@ -3401,9 +3403,9 @@ _lStart:
 			MenuSettingStart(TRUE);
 			OnRedraw();
 		}
-
-		if (g_uiProcStatus.bLcdSwitching || g_uiProcStatus.bSleeping)
-			goto _lExitWithoutSave;
+*/
+                //if (g_uiProcStatus.bLcdSwitching || g_uiProcStatus.bSleeping)
+                        //goto _lExitWithoutSave;
 
 		if (g_uiMenuItems[g_uiMenuItemIndex].nType != UIMENU_TITLE && g_uiMenuItems[g_uiMenuItemIndex].nType != UIMENU_POPUP)
 			g_uiHelpStr = g_uiMenuItems[g_uiMenuItemIndex].nHelpStr;
@@ -3419,7 +3421,7 @@ _lStart:
 		}
 
 		nKey =  uiKeyGetKey();
-		if (uiKeyIsDigit((T_UI_KEY)nKey))
+                /*if (uiKeyIsDigit((T_UI_KEY)nKey))
 		{
 			int title = uiProcMenuTitleIndex(nPopupMenuTitle);
 			if ((int)g_uiMenuItems[title].szIconFile == UIMENU_ICON)
@@ -3435,7 +3437,7 @@ _lStart:
 					nKey = UIKEY_OK;
 				}
 			}
-		}
+                }*/
 
 		switch (nKey)
 		{
@@ -3457,14 +3459,15 @@ _lStart:
 _lExit:
 	MenuSettingEnd(nPopupMenuTitle);
 	SET_GUITHEME(dbSetupTotal.setSystem.byTheme);
-	GUI_DLG_SET_THEME();
+        GUI_DLG_SET_THEME();
 
 _lExitWithoutSave:
 	if (nPopupMenuTitle == UISTR_MENU_MAINSETTING_TIME)
 	{
 		STOP_TIMER(TIMER_DATETIME_SETUP);
 	}
-
+        printf("###################CMenu::MenuProc######################\r\n");
+        //POST_EVENTS();
 	return;
 }
 
@@ -3476,6 +3479,10 @@ void CMenu::OnKeyPressOk(int /*nTitle*/)
 	nCurrentTitle = g_uiMenuItemTitle;
 	nCurrentIndex = g_uiMenuItemIndex;
 	nTopIndex = g_uiMenuTopIndex;
+
+        printf("nCurrentTitle==%d\r\n",nCurrentTitle);
+        printf("nCurrentIndex==%d\r\n",nCurrentIndex);
+        printf("nTopIndex==%d\r\n",nTopIndex);
 
 /*	if ((g_uiMenuItems[nCurrentIndex].nMenuStr == UISTR_MENU_ADVANCEDSETTING) ||
 		(g_uiMenuItems[nCurrentIndex].nMenuStr == UISTR_MENU_COMMSETTING_COMMPWD) ||
@@ -3598,6 +3605,7 @@ void CMenu::OnKeyPressOk(int /*nTitle*/)
 			goto _lPopupExit;
 		}
 		uiSoundOut(SOUND_MENUSELECT, UI_BUZZER_NONE);
+                printf("BEFORE***********UIMENU_POPUP**********\r\n");
 		MenuProc(g_uiMenuItems[nCurrentIndex].nMenuStr);
 
 _lPopupExit:
@@ -3608,6 +3616,11 @@ _lPopupExit:
 		__MENU_ICON_ITEM_SIZE = __prev_item_size;
 		g_uiPopupTitle = -1;
 		OnRedraw();
+                //this->paintEvent();
+
+                update();
+                //this->paintEvent();
+                printf("AFTER*************UIMENU_POPUP**********\r\n");
 		break;
 	case UIMENU_HASVALUE:
 		uiProcMenuHasValue(ui.lblBackgroundFrame, g_uiMenuItems[nCurrentIndex].nMenuStr);
@@ -3638,42 +3651,8 @@ void CMenu::OnKeyPressArrow(int nKey, int nTitle)
 	bReport = ((int)g_uiMenuItems[nFirstIndex-1].szIconFile == UIMENU_REPORT) ||
 		((int)g_uiMenuItems[nFirstIndex-1].szIconFile == UIMENU_REPORT_NOICON);
 
-	//if (bReport)
-	//{
-	//	if (nKey == UIKEY_UP)
-	//		nKey = UIKEY_LEFT;
-	//	else if (nKey == UIKEY_DOWN)
-	//		nKey = UIKEY_RIGHT;
-	//	else
-	//		nKey = UIKEY_NONE;
-	//}
-
 	switch (nKey)
 	{
-	/*case UIKEY_UP:
-		if ((g_uiMenuItems[nFirstIndex-1].nMenuStr == UISTR_MENU_ENROLLNEW) ||
-			(g_uiMenuItems[nFirstIndex-1].nMenuStr == UISTR_MENU_ENROLLDELETE))
-			g_uiMenuItemIndex = nFirstIndex + (g_uiMenuItemIndex - nFirstIndex + nItemCnt - 1) % nItemCnt;
-		else
-		{
-			nItemCnt1 = (nItemCnt + MENUITEM_COLS - 1) / MENUITEM_COLS * MENUITEM_COLS;
-			if ((nItemCnt1 > MENUITEM_COLS) && ((g_uiMenuItemIndex - nFirstIndex) % MENUITEM_COLS > (nItemCnt - 1) % MENUITEM_COLS))
-				nItemCnt1 -= MENUITEM_COLS;
-			g_uiMenuItemIndex = nFirstIndex + (g_uiMenuItemIndex - nFirstIndex + nItemCnt1 - MENUITEM_COLS) % nItemCnt1;
-		}
-		break;
-	case UIKEY_DOWN:
-		if ((g_uiMenuItems[nFirstIndex-1].nMenuStr == UISTR_MENU_ENROLLNEW) ||
-			(g_uiMenuItems[nFirstIndex-1].nMenuStr == UISTR_MENU_ENROLLDELETE))
-			g_uiMenuItemIndex = nFirstIndex + (g_uiMenuItemIndex - nFirstIndex + nItemCnt + 1) % nItemCnt;
-		else
-		{
-			nItemCnt1 = (nItemCnt + MENUITEM_COLS - 1) / MENUITEM_COLS * MENUITEM_COLS;
-			if ((nItemCnt1 > MENUITEM_COLS) && ((g_uiMenuItemIndex - nFirstIndex) % MENUITEM_COLS > (nItemCnt - 1) % MENUITEM_COLS))
-				nItemCnt1 -= MENUITEM_COLS;
-			g_uiMenuItemIndex = nFirstIndex + (g_uiMenuItemIndex - nFirstIndex + nItemCnt1 + MENUITEM_COLS) % nItemCnt1;
-		}
-		break;*/
 	case UIKEY_UP:
 		if ((g_uiMenuItems[nFirstIndex-1].nMenuStr == UISTR_MENU_ENROLLNEW) ||
 			(g_uiMenuItems[nFirstIndex-1].nMenuStr == UISTR_MENU_ENROLLDELETE))
@@ -3714,7 +3693,7 @@ void CMenu::OnKeyPressArrow(int nKey, int nTitle)
 void CMenu::OnRedraw()
 {
 	int nTitleIndex = uiProcMenuTitleIndex(g_uiMenuItemTitle);
-
+        printf("CMenu::OnRedraw\r\n");
 	
 	if(g_uiMenuItemTitle == UISTR_MENU_SYSINFOVIEW)
 	{
@@ -3726,8 +3705,7 @@ void CMenu::OnRedraw()
 		uiLcdSetLabelText(ui.lblTitleText1, UISTR(UISTR_UNIT_TOTAL), TITLECOLOR);
 		ui.lblTitleText1->show();
 	}
-	else
-		
+	else	
 	{
 		ui.lblTitleText1->hide();
 		setTitle(QString(RESOURCE_PATH) + QString(g_uiMenuItems[g_uiMenuItemIndex].szIconFile),
@@ -3750,26 +3728,33 @@ void CMenu::paintEvent(QPaintEvent *e)
 	CMainFrame::paintEvent(e);
 
 	if (!g_uiMenuRedrawFlag)
-		return;
+        {
+            printf("g_uiMenuRedrawFlag===%d\r\n",g_uiMenuRedrawFlag);
+            return;
+        }
+
 
 	QPixmap pmap = m_pmapFrame;
 	QPainter painter(&pmap);
 	int title, from, to;
 
-// 	painter.save();
-// 	painter.setPen(MENU_PEN_COLOR);
+        //painter.save();
+        //painter.setPen(MENU_PEN_COLOR);
 	title = uiProcMenuTitleIndex(g_uiMenuItemTitle);
 	if (uiProcMenuGetCurrentRange(&from, &to))
 	{
 		switch ((int)(g_uiMenuItems[title].szIconFile))
 		{
 		case UIMENU_ICON:
+                        //printf("CMenu::paintEvent UIMENU_ICON \r\n");
 			drawIconStyle(&painter, g_uiMenuItemIndex, from, to);
 			break;
 		case UIMENU_REPORT:
+                        //printf("CMenu::paintEvent UIMENU_REPORT \r\n");
 			drawReportStyle(&painter, g_uiMenuItemIndex, from, to, TRUE);
 			break;
 		case UIMENU_REPORT_NOICON:
+                        //printf("CMenu::paintEvent UIMENU_REPORT_NOICON \r\n");
 			drawReportStyle(&painter, g_uiMenuItemIndex, from, to, FALSE);
 			break;
 		case UIMENU_CUSTOMDRAW:
@@ -3782,7 +3767,7 @@ void CMenu::paintEvent(QPaintEvent *e)
 			break;
 		}
 	}
-// 	painter.restore();
+        //painter.restore();
 
 	ui.lblBackgroundFrame->setPixmap(pmap); 
 }
