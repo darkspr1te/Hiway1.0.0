@@ -2268,7 +2268,7 @@ void SET_DLG_ITEM_COLOR(QWidget *w, int colorFlag /* = 0*/)
 //////////////////////////////////////////////////////////////////////////
 int FILEOPEN(const char *szFilename, int flags)
 {
-	int fd = open(szFilename, flags & O_CUSTOMMASK);
+        int fd = open(szFilename, flags & O_CUSTOMMASK,0x777);
 
 	if (fd != INVALID_HANDLE_VALUE)
 	{
@@ -2428,7 +2428,7 @@ BOOL SAVE_FILE(const char *szFullPath, BYTE *pData, int nSize)
 		}
 	}
 
-	fd = open(szFullPath, O_RDWR | O_CREAT | O_SYNC | O_TRUNC);//
+        fd = open(szFullPath, O_RDWR | O_CREAT | O_SYNC | O_TRUNC,0x777);//
 	if (fd == INVALID_HANDLE_VALUE)
 		goto _lExit;
 	bRet = (write(fd, pData, nSize) == nSize);

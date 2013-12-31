@@ -336,7 +336,7 @@ BOOL DbBackupLicenseWrite(BYTE *pby)
 	int fd;
 	BOOL bRet;
 
-	fd = open(FLASH_LICENSE_BACKUP, O_WRONLY | O_CREAT);
+        fd = open(FLASH_LICENSE_BACKUP, O_WRONLY | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -377,7 +377,7 @@ int DbBackupSetupWrite(BYTE *pby)
 	int fd;
 	BOOL bRet;
 
-	fd = open(FLASH_SETUP_BACKUP, O_WRONLY | O_CREAT);
+        fd = open(FLASH_SETUP_BACKUP, O_WRONLY | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -498,7 +498,7 @@ BOOL DbLicenseRead(void)
 	BOOL bRet = TRUE;
 	int nBackupStatus;
 
-	fd = open(FLASH_LICENSE_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_LICENSE_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -666,7 +666,7 @@ BOOL DbLicenseWrite(void)
 	DWORD dwCheckSum = FLASH_CHECKSUM_SIGN;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_LICENSE_FILENAME, O_WRONLY | O_CREAT);
+        fd = open(FLASH_LICENSE_FILENAME, O_WRONLY | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -728,9 +728,9 @@ BOOL DbSetupTotalRead(BOOL bBackupCheck /*= TRUE*/)
 	bRet = DbLicenseRead();
 #if 	AE_372X
 	//为了让存储为2000为特意假的规定
-	int gFpMaximum_back = 2000;
+        int gFpMaximum_back = 100;
 	memcpy(&gFpMaximum,&gFpMaximum_back,4);
-	dbLicense.nMaxEnrollCount = 2000;
+        dbLicense.nMaxEnrollCount = 100;
 #endif
 
 #if 	AE_375X	
@@ -738,7 +738,7 @@ BOOL DbSetupTotalRead(BOOL bBackupCheck /*= TRUE*/)
 	dbLicense.nMaxEnrollCount = gFpMaximum;
 #endif
 
-	fd = open(FLASH_SETUP_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SETUP_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -1112,7 +1112,7 @@ BOOL DbSetupTotalWrite(BOOL bChangeTheme /*= TRUE*/)
 		dbSetupTotal.setNoMenu.wiegand_type.byCC_len = 16;
 	}
 
-	fd = open(FLASH_SETUP_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SETUP_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -1236,7 +1236,7 @@ void DbSetupTotalSave(void)
 	DWORD dwCheckSum = FLASH_CHECKSUM_SIGN;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_SETUP_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SETUP_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return ;
 	
@@ -1273,7 +1273,7 @@ void DbSetupTotal2Default(void)
 	BOOL bRet = TRUE;
 	BYTE* pby;
 
-	fd = open(FLASH_SETUP_FILENAME, O_WRONLY | O_CREAT);
+        fd = open(FLASH_SETUP_FILENAME, O_WRONLY | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return;
 	
@@ -1314,7 +1314,7 @@ BOOL DbFpLoad(void)
 	int fd;
 	BOOL bRet = TRUE;
 	
-	fd = open(FLASH_FP_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_FP_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -1341,7 +1341,7 @@ BOOL DbFpSave(void)
 	int fd;
 	BOOL bRet = TRUE;
 	
-	fd = open(FLASH_FP_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_FP_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -1364,7 +1364,7 @@ BOOL DbFpSaveOne(int nPos)
 	int fd;
 	BOOL bRet = TRUE;
 	
-	fd = open(FLASH_FP_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_FP_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -1629,7 +1629,7 @@ BOOL DbUserTimeLoad(void)
 	BOOL bRet = TRUE;
 	int size;
 
-	fd = open(FLASH_USERTIME_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_USERTIME_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -1662,7 +1662,7 @@ BOOL DbUserTimeSave(void)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_USERTIME_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_USERTIME_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -1685,7 +1685,7 @@ BOOL DbUserTimeSaveOne(int nPos)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_USERTIME_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_USERTIME_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -1841,7 +1841,7 @@ BOOL DbFpUploadDataLoad(void)
 	BOOL bRet = TRUE;
 	int size;
 
-	fd = open(FLASH_FPUPLOAD_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_FPUPLOAD_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -1872,7 +1872,7 @@ BOOL DbFpUploadDataSaveOne(int Pos)
 	int fd;	
 	BOOL bRet = TRUE;	
 
-	fd = open(FLASH_FPUPLOAD_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_FPUPLOAD_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;	
 	bRet = _Db_SaveOne(fd, Pos, sizeof(st_FpUploadData), (char*)gpFpUploadData);
@@ -1974,7 +1974,7 @@ BOOL DbUserIdHeadListLoad(void)
 	BOOL bRet = TRUE;
 	int size;
 
-	fd = open(FLASH_IDHEADLIST_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_IDHEADLIST_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -2009,7 +2009,7 @@ BOOL DbUserIdHeadListSave(void)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_IDHEADLIST_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_IDHEADLIST_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -2060,7 +2060,7 @@ BOOL DbUserInfoLoad(void)
 	int fd;
 	BOOL bRet = TRUE;
         printf("bRet111: %d\r\n", bRet);
-	fd = open(FLASH_USERINFO_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_USERINFO_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
         {
             printf("bRet222: %d\r\n", bRet);
@@ -2090,7 +2090,7 @@ BOOL DbUserInfoSave(void)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_USERINFO_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_USERINFO_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -2113,7 +2113,7 @@ BOOL DbUserInfoSaveOne(int nPos)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_USERINFO_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_USERINFO_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -2931,7 +2931,7 @@ BOOL DbSLogLoad(void)
 	BOOL bRet = TRUE;
 	MLOG_INFO *pLogBuffer = NULL;
 
-	fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -3001,7 +3001,7 @@ BOOL DbSLogAdd(MLOG_INFO *pLogData)
 	memset(LOGTEMP, 0, nSize);
 	memcpy(&LOGTEMP[0], pLogData, sizeof(MLOG_INFO));
 
-	fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -3059,7 +3059,7 @@ int	DbSLogCountAll(void)
 	int nFileSize;
 	int nCount;
 
-	fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 
@@ -3083,7 +3083,7 @@ int	DbSLogGet(MLOG_INFO *pLogBuffer, int from, int count)
 	if (bRotate)
 		from = (from + __SLOG_POS + 1) % dbLicense.nSlogMaxCount;
 
-	fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 
@@ -3160,7 +3160,7 @@ BOOL DbGLogLoad(void)
 				DWORD dwAntipassLastDate ;
 		DWORD dwSecond;
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -3266,7 +3266,7 @@ BOOL DbGLogAdd(ALOG_INFO *pLogData)
 	memset(LOGTEMP, 0, nSize);
 	memcpy(&LOGTEMP[0], pLogData, sizeof(ALOG_INFO));
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -3327,7 +3327,7 @@ int	DbGLogCountAll(void)
 	int nFileSize;
 	int nCount;
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 
@@ -3351,7 +3351,7 @@ int	DbGLogGet(ALOG_INFO *pLogBuffer, int from, int count)
 	if (bRotate)
 		from = (from + __GLOG_POS + 1) % dbLicense.nGlogMaxCount;
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 
@@ -3388,7 +3388,7 @@ int	DbSLogGetByTime(MLOG_INFO *pLogBuffer,int from,int to, int fromsecond, int t
 	MLOG_INFO *buf =pLogBuffer;
 
 
-	fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 
@@ -3434,7 +3434,7 @@ int	DbGLogGetByTime(ALOG_INFO *pLogBuffer,int from,int to, u32 fromsecond, u32 t
 	//if (bRotate)
 	//	from = (from + __GLOG_POS + 1) % dbLicense.nGlogMaxCount;
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 
@@ -3486,7 +3486,7 @@ int	DbGLogGetByTimeAllSearch(ALOG_INFO *pLogBuffer,DWORD from,DWORD to, int from
 	int result = 0;
 	ALOG_INFO *buf =pLogBuffer;
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 
@@ -3536,7 +3536,7 @@ int	DbSLogPosGetByTime(int from,int to, int fromsecond, int tosecond)
 	int pos;
 	int result = 0;
 
-	fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
     for(i=from;i<to;i++)
@@ -3571,7 +3571,7 @@ int	DbGLogPosGetByTime(int from,int to, u32 fromsecond, u32 tosecond)
 	ALOG_INFO logtemp;
 	int pos;
 	int result = 0;
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
     for(i=from;i<to;i++)
@@ -3610,7 +3610,7 @@ int	DbGLogCountGetByTime(int from,int to, u32 fromsecond, u32 tosecond)
 
 	//   	int nYear,  nMonth,  nDay, nHour, nMinute,  nSecond;
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
     for(i=from;i<to;i++)
@@ -3661,7 +3661,7 @@ DWORD	DbGLogCountGetByTimeAllSearch( u32 fromsecond, u32 tosecond)
 	//   	int nYear,  nMonth,  nDay, nHour, nMinute,  nSecond;
 	count = DbGLogCountAll();
 	SearchCount=0;
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
     for(i=0;i<count;i++)
@@ -3847,7 +3847,7 @@ BOOL DbUIIndexLoad(void)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_UI_INDEX_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_UI_INDEX_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -3877,7 +3877,7 @@ BOOL DbUIIndexSave(void)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_UI_INDEX_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_UI_INDEX_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -3954,7 +3954,7 @@ BOOL DbFPIndexLoad(void)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_FP_INDEX_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_FP_INDEX_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -3983,7 +3983,7 @@ BOOL DbFPIndexSave(void)
 	int fd;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_FP_INDEX_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_FP_INDEX_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 
@@ -4533,7 +4533,7 @@ BOOL DbSetupTotalWriteOnly( void)
 	BOOL bNetworkSetting = FALSE;
 	BOOL bRet = TRUE;
 
-	fd = open(FLASH_SETUP_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_SETUP_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return FALSE;
 	
@@ -4614,7 +4614,7 @@ DWORD	DbGLogCountGetByTimeAllSearch_and_byid( u32 fromsecond, u32 tosecond,u64 i
 	//   	int nYear,  nMonth,  nDay, nHour, nMinute,  nSecond;
 	count = DbGLogCountAll();
 	SearchCount=0;
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
     for(i=0;i<count;i++)
@@ -4653,7 +4653,7 @@ int	DbGLogGetByTime_and_byID(ALOG_INFO *pLogBuffer,int from,int to, u32 fromseco
 	//if (bRotate)
 	//	from = (from + __GLOG_POS + 1) % dbLicense.nGlogMaxCount;
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 
@@ -4712,7 +4712,7 @@ int DbGLogGetByindex(ALOG_INFO *pLogBuffer,int from,int to)
 	//if (bRotate)
 	//	from = (from + __GLOG_POS + 1) % dbLicense.nGlogMaxCount;
 
-	fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT);
+        fd = open(FLASH_GLOG_FILENAME, O_RDWR | O_CREAT,0x777);
 	if (fd == INVALID_HANDLE_VALUE)
 		return 0;
 

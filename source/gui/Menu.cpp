@@ -3456,9 +3456,12 @@ _lStart:
 	if (uiTimeIsTimeout())
 		goto _lExitWithoutSave;
 
+        //SET_GUITHEME(dbSetupTotal.setSystem.byTheme);
+        //GUI_DLG_SET_THEME();
+
 _lExit:
 	MenuSettingEnd(nPopupMenuTitle);
-	SET_GUITHEME(dbSetupTotal.setSystem.byTheme);
+        SET_GUITHEME(dbSetupTotal.setSystem.byTheme);
         GUI_DLG_SET_THEME();
 
 _lExitWithoutSave:
@@ -3783,7 +3786,7 @@ void CMenu::drawIconStyle(QPainter *painter, int nCurrentIndex, int from, int to
 
 	w = MENUITEM_ICONSTYLE_SIZE; h = MENUITEM_ICONSTYLE_SIZE;   
 	w_spacer = (painter->window().width() - w * MENUITEM_COLS) / (MENUITEM_COLS + 1); 
-    h_spacer = 15; 
+        h_spacer = 15;
 	x = m_nFrameX + w_spacer; y = MENU_ICON_TOPMARGIN + m_nFrameY - h - h_spacer;
 
 	for (i=from; i<=to; i++)
@@ -3796,7 +3799,7 @@ void CMenu::drawIconStyle(QPainter *painter, int nCurrentIndex, int from, int to
 
 		item = &g_uiMenuItems[i];
 
-        if (nCurrentIndex == i)
+                if (nCurrentIndex == i)
 		{
 			QPixmap pmap_sel(QString(RESOURCE_PATH) + QString(SELECTED_ITEM_FILENAME));
 			QPainterPath roundPath = CustomStyle::roundRectPath(QRect(x, y, w, h));
@@ -3807,12 +3810,12 @@ void CMenu::drawIconStyle(QPainter *painter, int nCurrentIndex, int from, int to
 		else
 		{
 			painter->setPen(QPen(QColor(74,74,74),1,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin)); 
-            painter->setBrush(QColor(20,20,20));
-			painter->drawRoundRect(x, y, w, h, 20, 15);
+                        painter->setBrush(QColor(30,30,30));
+                        painter->drawRoundRect(x, y, w, h, 40,40/*20, 15*/);
 		}
 
 		QIcon ico(QString(RESOURCE_PATH) + QString(item->szIconFile));
-        ico.paint(painter, x, y, MENUITEM_ICONSTYLE_SIZE, MENUITEM_ICONSTYLE_SIZE, Qt::AlignCenter, QIcon::Normal);  
+                ico.paint(painter, x, y, MENUITEM_ICONSTYLE_SIZE, MENUITEM_ICONSTYLE_SIZE, Qt::AlignCenter, QIcon::Normal);
 
 		QString str = UISTR(item->nMenuStr);
 		if (painter->fontMetrics().width(str) >= w)
@@ -3821,6 +3824,17 @@ void CMenu::drawIconStyle(QPainter *painter, int nCurrentIndex, int from, int to
 				str.resize(str.length() - 1);
 			str.append("...");
 		}
+                //hiway add
+                if(nCurrentIndex == i)
+                {
+                    painter->setFont(SB_FONT_2());
+                    uiLcdDrawText(painter, x, y, w, h, Qt::AlignBottom | Qt::AlignHCenter, str, MENU_ITEM_SELET_COLOR);
+                    painter->setFont(SB_FONT_3());
+                }
+                else
+                {
+                    uiLcdDrawText(painter, x, y, w, h+13, Qt::AlignBottom | Qt::AlignHCenter, str, MENU_PEN_COLOR);
+                }
 
 		x = x + w + w_spacer;
 	}

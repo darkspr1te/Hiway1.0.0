@@ -7,44 +7,49 @@
  <data>
   <variable>ProjectExplorer.Project.EditorSettings</variable>
   <valuemap type="QVariantMap">
-   <value key="EditorConfiguration.Codec" type="QByteArray">System</value>
+   <value key="EditorConfiguration.Codec" type="QByteArray">Default</value>
   </valuemap>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Desktop</value>
-   <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Desktop</value>
+   <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Target.DesktopTarget</value>
-   <value key="ProjectExplorer.Target.ActiveBuildConfiguration" type="int">1</value>
+   <value key="ProjectExplorer.Target.ActiveBuildConfiguration" type="int">7</value>
    <value key="ProjectExplorer.Target.ActiveDeployConfiguration" type="int">0</value>
    <value key="ProjectExplorer.Target.ActiveRunConfiguration" type="int">0</value>
    <valuemap key="ProjectExplorer.Target.BuildConfiguration.0" type="QVariantMap">
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
      <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
-      <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
+      <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList">
+       <value type="QString">-spec</value>
+       <value type="QString">android-g++</value>
+      </valuelist>
       <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
      </valuemap>
      <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
       <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
-      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+       <value type="QString">debug</value>
+      </valuelist>
       <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
      </valuemap>
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
     </valuemap>
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
      <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
       <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
       <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
@@ -54,18 +59,18 @@
      </valuemap>
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
     </valuemap>
     <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
     <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
     <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
-    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">4.1.5 Debug</value>
-    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">4.1.5 Debug</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString"> Debug</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">2</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/mnt/hgfs/working_comet/WEB2.0/E60_web2</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">6</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">10</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/Hiway-v1.0.0</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">14</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">false</value>
    </valuemap>
@@ -73,14 +78,14 @@
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
      <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
       <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
       <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
      </valuemap>
      <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
       <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
       <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
@@ -88,13 +93,13 @@
      </valuemap>
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
     </valuemap>
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
      <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
       <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
       <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
@@ -104,33 +109,33 @@
      </valuemap>
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
     </valuemap>
     <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
     <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
     <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
-    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">4.1.5 Release</value>
-    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">4.1.5 Release</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Qt in PATH Release</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">0</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/mnt/hgfs/working_comet/WEB2.0/E60_web2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/application-build-desktop</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">3</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">false</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
    </valuemap>
    <valuemap key="ProjectExplorer.Target.BuildConfiguration.2" type="QVariantMap">
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
      <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
       <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
       <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
      </valuemap>
      <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
       <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
       <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
@@ -138,13 +143,13 @@
      </valuemap>
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
     </valuemap>
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
      <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
       <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
       <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
@@ -154,18 +159,18 @@
      </valuemap>
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
     </valuemap>
     <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
     <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
     <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
-    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Qt 4.6.3 OpenSource Debug</value>
-    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Qt 4.6.3 OpenSource Debug</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Qt in PATH Debug</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">2</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/mnt/hgfs/working_comet/WEB2.0/application-build-desktop</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/application-build-desktop</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">3</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
    </valuemap>
@@ -173,14 +178,14 @@
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
      <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
       <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
       <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
      </valuemap>
      <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
       <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
       <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
@@ -188,13 +193,13 @@
      </valuemap>
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
     </valuemap>
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
      <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
       <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
-      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
       <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
       <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
       <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
@@ -204,38 +209,288 @@
      </valuemap>
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
     </valuemap>
     <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
     <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
     <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
-    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Qt 4.6.3 OpenSource Release</value>
-    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Qt 4.6.3 OpenSource Release</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">4.1.5 Release</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">0</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/mnt/hgfs/working_comet/WEB2.0/application-build-desktop</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/application-build-desktop</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">9</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
    </valuemap>
-   <value key="ProjectExplorer.Target.BuildConfigurationCount" type="int">4</value>
+   <valuemap key="ProjectExplorer.Target.BuildConfiguration.4" type="QVariantMap">
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
+      <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
+      <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
+     </valuemap>
+     <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
+    <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
+    <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">4.1.5 Debug</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/application-build-desktop</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">9</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
+   </valuemap>
+   <valuemap key="ProjectExplorer.Target.BuildConfiguration.5" type="QVariantMap">
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
+      <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
+      <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
+     </valuemap>
+     <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
+    <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
+    <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">4.5.0 Release</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">0</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/application-build-desktop</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">12</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
+   </valuemap>
+   <valuemap key="ProjectExplorer.Target.BuildConfiguration.6" type="QVariantMap">
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
+      <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
+      <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
+     </valuemap>
+     <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
+    <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
+    <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">4.5.0 Debug</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/application-build-desktop</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">12</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
+   </valuemap>
+   <valuemap key="ProjectExplorer.Target.BuildConfiguration.7" type="QVariantMap">
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
+      <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
+      <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
+     </valuemap>
+     <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
+    <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
+    <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qt-hiway Release</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">0</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/application-build-desktop</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">14</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">false</value>
+   </valuemap>
+   <valuemap key="ProjectExplorer.Target.BuildConfiguration.8" type="QVariantMap">
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qmake</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
+      <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
+      <value key="QtProjectManager.QMakeBuildStep.QMakeForced" type="bool">false</value>
+     </valuemap>
+     <valuemap key="ProjectExplorer.BuildStepList.Step.1" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">2</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Build</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.1" type="QVariantMap">
+     <valuemap key="ProjectExplorer.BuildStepList.Step.0" type="QVariantMap">
+      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Make</value>
+      <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+      <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
+      <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+     </valuemap>
+     <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">1</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Clean</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">2</value>
+    <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
+    <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
+    <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">qt-hiway Debug</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/root/application-build-desktop</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">14</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
+   </valuemap>
+   <value key="ProjectExplorer.Target.BuildConfigurationCount" type="int">9</value>
    <valuemap key="ProjectExplorer.Target.DeployConfiguration.0" type="QVariantMap">
     <valuemap key="ProjectExplorer.BuildConfiguration.BuildStepList.0" type="QVariantMap">
      <value key="ProjectExplorer.BuildStepList.StepsCount" type="int">0</value>
      <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">Deploy</value>
-     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Deploy</value>
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
      <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.BuildSteps.Deploy</value>
     </valuemap>
     <value key="ProjectExplorer.BuildConfiguration.BuildStepListCount" type="int">1</value>
     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">No deployment</value>
-    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">No deployment</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">ProjectExplorer.DefaultDeployConfiguration</value>
    </valuemap>
    <value key="ProjectExplorer.Target.DeployConfigurationCount" type="int">1</value>
    <valuemap key="ProjectExplorer.Target.RunConfiguration.0" type="QVariantMap">
     <value key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName" type="QString">application</value>
-    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">application</value>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
     <value key="Qt4ProjectManager.Qt4RunConfiguration.BaseEnvironmentBase" type="int">2</value>
     <valuelist key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments" type="QVariantList"/>

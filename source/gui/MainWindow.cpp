@@ -707,7 +707,8 @@ void uiProcTimerManage()
 			g_uiProcStatus.bMenuRequested = FALSE;
 			g_uiProcStatus.bMenuProcessing = TRUE;
                         //uiSoundOut(SOUND_ENTERMENU, UI_BUZZER_OK);
-			CMenu m(g_MainWindow);
+                        //CMenu m(g_MainWindow);
+                        CMenu m(g_MainWindow);
 			m.show();
 			m.MenuProc();
 			g_uiProcStatus.bReqManager = FALSE;
@@ -1643,10 +1644,10 @@ void CMainWindow::DrawClock(BOOL bForce  /*= FALSE*/)
 		DWORD dwSeconds;
 		dwSeconds = uiRtcGetSeconds();
 	//	uiRtcGetDate(dwSeconds);
-                uiLcdSetLabelText(ui.lblMonth, uiRtcGetDate(dwSeconds), QColor(255, 255, 255), QColor(255, 255, 255));
+                uiLcdSetLabelText(ui.lblMonth, uiRtcGetDate(dwSeconds), QColor(255, 255, 0), QColor(255, 255, 255));
 
 		sprintf(szBuf, "%02d:%02d", nHour, nMinute);
-                uiLcdSetLabelText(ui.lblTime, szBuf, QColor(255, 255, 255/*0*/), QColor(255, 255, 255));
+                uiLcdSetLabelText(ui.lblTime, szBuf, QColor(255, 255, 0), QColor(255, 255, 255));
 		uiLcdSetLabelText(ui.lblWeekday, UISTR(__weekday_list[nWeekday - 1]), QColor(255, 255, 214), QColor(255, 255, 255));
 	}
 }
